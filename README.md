@@ -1,6 +1,6 @@
 # Covid19_PHU
 
-![Logo](https://user-images.githubusercontent.com/75437852/118293607-d0c45d00-b4a7-11eb-9712-3cb980709aca.png)
+![Logo](https://user-images.githubusercontent.com/75437852/118338107-531e4280-b4e3-11eb-957d-86875559f188.png)
 <br>
 <br>
 
