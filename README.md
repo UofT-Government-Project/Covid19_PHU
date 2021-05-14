@@ -8,7 +8,7 @@ Phone numbers have been exchanged and a group chat set up on WhatsApp for ad hoc
 
 ### Team Member roles:
 ***Tarana:***  Setting up repository, branches and updating README.md.<br>
-***Faridah:***  Explaination of the ETL process on data.<br>
+***Faridah:***  Explanation of the ETL process on data.<br>
 ***Michelle:***  Creating an ERD for the mockup database to be used.<br>
 ***Lida:*** Creating the mockup machine learning model to be used. <br>
-***Blessing:***  Explaination of which technologies group will be using and why.
+***Blessing:***  Explanation of which technologies group will be using and why.
