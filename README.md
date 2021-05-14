@@ -1,11 +1,3 @@
-# Machine Learning
-
-### The Machine learning model: 
-RandomForest classifier (RFC) from ML sklearn library
-
-### Training and testing set: 
-Dates (broken into month and year), PHU (public health unit), location, number of Covid cases resolved and death cases per PHU.
-
 ## Machine Learning
 
 ### The Machine learning model: 
