@@ -1,7 +1,7 @@
 # Covid19_PHU
 
 <p align="center">
-  <img width="1000" height="865" src="https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/Logo.png?raw=true">
+  <img width="1000" height="433" src="https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/Logo.png?raw=true">
 </p>
 <br>
 
