@@ -1,6 +1,6 @@
 # Covid19_PHU
 
-[!Logo](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/Logo.png?raw=true)<br>
+![Logo](https://user-images.githubusercontent.com/75437852/118293607-d0c45d00-b4a7-11eb-9712-3cb980709aca.png)
 <br>
 <br>
 
