@@ -4,7 +4,8 @@ Two data sources were used to create the ERD for our project. The first dataset 
 
 
 ## ERD
-<img width="1334" alt="ERD_COVID19_PHU" src="https://user-images.githubusercontent.com/75905911/118364910-7dfeaa00-b568-11eb-8350-cfeb2b81240b.png">
+<img width="1431" alt="ERD_Covid19_PHU" src="https://user-images.githubusercontent.com/75905911/118367051-d20c8d00-b56e-11eb-873a-722179cd5bea.png">
+
 
 Primary Keys for both tables are: PHU_ID. PHU_ID is also a foreign key for "Ministry of Health Public Health Unit Boundary". Both tables will be joined using the PHU_IDs columns from both tables. Other foreign key assignments are: PHU_NAME in "Status of COVID-19 cases in Ontario by Public Health Unit (PHU)" and NAME_ENG in "Ministry of Health Public Health Unit Boundary".
 
