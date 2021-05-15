@@ -17,7 +17,7 @@ Phone numbers have been exchanged and a group chat set up on WhatsApp for ad hoc
 Two data sources were used to create the ERD for our project. The first dataset is the "Status of COVID-19 cases in Ontario by Public Health Unit (PHU)". Columns' details are: _id, FILE_DATE, PHU_NAME, PHU_NUM, ACTIVE_CASES, RESOLVED_CASES and DEATHS. The second dataset titled "Ministry of Health Public Health Unit Boundary" has the following columns: FID, OGF_ID, PHU_ID, NAME_ENG, NAME_FR, GEO_UPD_DT, EFF_DATE, Shape__Area, and Shape__Length.
 
 
-## ERD
+### ERD
 <img width="1431" alt="ERD_Covid19_PHU" src="https://user-images.githubusercontent.com/75905911/118367051-d20c8d00-b56e-11eb-873a-722179cd5bea.png">
 
 
