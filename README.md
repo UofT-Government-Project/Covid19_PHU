@@ -1,8 +1,20 @@
 # Technology
 ## Data Cleaning and Analysis
-Pandas and Numpy will be used for preprocessing, cleaning and performing an exploratory analysis. 
+Pandas and Numpy will be used for preprocessing, cleaning and performing an exploratory analysis, and Google colab for mapping pandas and Gmaps. 
+
 ![Data-Preparation](https://user-images.githubusercontent.com/76136277/118398306-00996f00-b626-11eb-9cb6-058db86895c3.jpg)
+
 ## Database Storage
-AWS/ ProstgresSQL to store and share the database. For merging, manipulating and querying the data we will use pgAdmin. 
+AWS/ ProstgresSQL will be used to store and share the database, and pgAdmin for merging, manipulating and querying the data.
+
+![image](https://user-images.githubusercontent.com/76136277/118399177-ebbeda80-b629-11eb-997d-fb8b0fdd6a35.png)
+
 ## Machine Learning
-SciKitLearn is the ML library we'll be using to create a classifier. Our training and testing setup is ___. Extra ML verbiage here.
+RandomForest classifier (RFC) from ML sklearn library will be used to create a classifier. Our training and testing setup is ___
+
+Dates (broken into month and year), PHU (public health unit), location, number of Covid cases resolved and death cases per PHU.
+
+## Dashboard
+Tableau will be used for visualization and creating an interactive dashboard. The image below is a sample of a tableau dashbaord;
+
+![image](https://user-images.githubusercontent.com/76136277/118399138-b0241080-b629-11eb-82a8-1119b5ded5bb.png)
