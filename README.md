@@ -6,7 +6,7 @@ Two sets of data have been used for the machine learning model; these datasets w
 
 The general process that we will be following is as shown below:
 
-<< Insert Diagram>>
+![Image](https://github.com/UofT-Government-Project/Covid19_PHU/blob/faridah/ETL%20Process.PNG)
 
 ## Extract
 
