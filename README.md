@@ -5,7 +5,7 @@ Pandas and Numpy will be used for preprocessing, cleaning and performing an expl
 ![Data-Preparation](https://user-images.githubusercontent.com/76136277/118398306-00996f00-b626-11eb-9cb6-058db86895c3.jpg)
 
 ## Database Storage
-AWS/ ProstgresSQL will be used to store and share the database, and pgAdmin for merging, manipulating and querying the data. SQLAlchemy will be used for the connection string.
+AWS/ ProstgresSQL will be used to store and share the database, and pgAdmin for merging, manipulating and querying the data. Also, SQLAlchemy will be used for the connection string.
 
 ![image](https://user-images.githubusercontent.com/76136277/118399177-ebbeda80-b629-11eb-997d-fb8b0fdd6a35.png)
 
