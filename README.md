@@ -16,6 +16,6 @@ RandomForest classifier (RFC) from ML sklearn library will be used to create a c
 
 
 ## Dashboard
-Tableau will be used for visualization and creating an interactive dashboard. The image below is a sample of a tableau dashbaord;
+Tableau will be used for visualization and creating an interactive dashboard. The image below is a sample of a Tableau dashbaord;
 
 ![image](https://user-images.githubusercontent.com/76136277/118399138-b0241080-b629-11eb-82a8-1119b5ded5bb.png)
