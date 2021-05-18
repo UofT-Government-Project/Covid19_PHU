@@ -30,4 +30,4 @@ The model is going to predict PHUs with high active cases to help the government
 ### The reasons for choosing the ML model: 
 The model has high accuracy and is robust to outliers. There are also low correlations in features that requires multiple learning algorithms. 
 
-![ML Flowchart](Pictures/ML_flowchart.png)
+![ML Flowchart](Images/ML_flowchart.png)
