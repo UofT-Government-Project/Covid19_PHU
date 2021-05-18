@@ -1,6 +1,7 @@
 <p align="center">
   <img width="650" height="163" src="https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/Logo.png?raw=true">
 </p>
+
 # Covid-19 and Public Health Units in Ontario
 
 ## Overview
