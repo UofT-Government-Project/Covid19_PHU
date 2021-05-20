@@ -4,7 +4,7 @@
 ### The Machine learning model based o the new dataset:
 LogisticRegression from ML sklearn library
 
-###Cleaning and Processing:
+### Cleaning and Processing:
 - Dropped unnecessary columns that have no impact on our predictation:
  -Renamed the column names
  -Broke Date to week, month and year
@@ -27,7 +27,7 @@ LogisticRegression from ML sklearn library
 ### Logistic Regression ML model:
  -Accuracy score 0.977
 
-###Reasons for using Logistic Regression:
+### Reasons for using Logistic Regression:
 
 -It is a classification algorithm analyzes continues and categorial variables.
 -It generates relatively high accuracy score while it is a straightforward model , easy to implement and interpret.
@@ -35,7 +35,7 @@ LogisticRegression from ML sklearn library
 -It predicts probability of high covid cases in public health units (PHU) in Ontario. 
 
 
-###Limitations:
+### Limitations:
 
 - Logistic regression model assumes linearity between the dependent variable and independant variables
 - Non-linear problems can not be solved with this model
