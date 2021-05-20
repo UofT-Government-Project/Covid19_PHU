@@ -29,10 +29,10 @@ LogisticRegression from ML sklearn library
 
 ### Reasons for using Logistic Regression:
 
--It is a classification algorithm analyzes continues and categorial variables.
--It generates relatively high accuracy score while it is a straightforward model , easy to implement and interpret.
--LR makes no asuumptions about classes in features and it is fast at classifying unknown records. 
--It predicts probability of high covid cases in public health units (PHU) in Ontario. 
+- It is a classification algorithm analyzes continues and categorial variables.
+- It generates relatively high accuracy score while it is a straightforward model , easy to implement and interpret.
+- LR makes no asuumptions about classes in features and it is fast at classifying unknown records. 
+- It predicts probability of high covid cases in public health units (PHU) in Ontario. 
 
 
 ### Limitations:
