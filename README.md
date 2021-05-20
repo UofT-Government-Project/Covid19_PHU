@@ -18,14 +18,14 @@ LogisticRegression from ML sklearn library
 - Merged the dataframes and dropped the categorial columns
 
 ### Set the Target and features
--Set active Covid cases as our target(y)
--Removed three columns ( active cases, fatal cases and resoved cases) from our dataframe to set up our features (X)
+- Set active Covid cases as our target(y)
+- Removed three columns ( active cases, fatal cases and resoved cases) from our dataframe to set up our features (X)
 
 ### Training and testing set:  
--Split our data into training and testing by train_test_split function from sklearn library
--Scaled the data
+- Split our data into training and testing by train_test_split function from sklearn library
+- Scaled the data
 ### Logistic Regression ML model:
- -Accuracy score 0.977
+- Accuracy score 0.977
 
 ### Reasons for using Logistic Regression:
 
