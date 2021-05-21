@@ -1,8 +1,11 @@
 
 ## Machine Learning- Week2
 
-### The Machine learning model based o the new dataset:
-LogisticRegression from ML sklearn library
+### The Machine learning model based on the new dataset:
+RandomForest Classifier from ML sklearn library
+
+### Based on the new dataset,our prediction is the fatal cases of covid cases.The dataset lacks continues features that have an impact on our predications. 
+These features could be different factors of health conditions.Our data is limited to very few factores such as age, gender, location and date that are not corrolated to our outcome.
 
 ### Cleaning and Processing:
 - Dropped unnecessary columns that have no impact on our predictation:
@@ -18,28 +21,31 @@ LogisticRegression from ML sklearn library
 - Merged the dataframes and dropped the categorial columns
 
 ### Set the Target and features
-- Set active Covid cases as our target(y)
-- Removed three columns ( active cases, fatal cases and resoved cases) from our dataframe to set up our features (X)
+- Removed ' Not recivered' from outcome so we end up with two classes 'Fatal' and 'Recovered'
+- Set Fatal cases as our target(y)
+- Removed three columns ( fatal cases and resolved cases) from our dataframe to set up our features (X)
 
 ### Training and testing set:  
 - Split our data into training and testing by train_test_split function from sklearn library
 - Scaled the data
-### Logistic Regression ML model:
-- Accuracy score 0.977
+### RandomForest Classifier ML model:
+- Accuracy score 0.92 - The high accuracy is due to high recovery rate of covid.
 
-### Reasons for using Logistic Regression:
 
-- It is a classification algorithm analyzes continues and categorial variables.
-- It generates relatively high accuracy score while it is a straightforward model , easy to implement and interpret.
-- LR makes no asuumptions about classes in features and it is fast at classifying unknown records. 
-- It predicts probability of high covid cases in public health units (PHU) in Ontario. 
+### Reasons for using RandomForest Classifier:
 
+- It reduces overfitting in decision trees that improves high accuracy
+- The model is robust to outliers.
+- It works well with both categorial and continues values.  
+- There are also low correlations in features that requires multiple learning algorithms.
+- It automates missing values in the data.
+ 
 
 ### Limitations:
 
-- Logistic regression model assumes linearity between the dependent variable and independant variables
-- Non-linear problems can not be solved with this model
-- It is difficult to get complex relationships with this model and deep learning Neural Networks can outperfom LR model.
+- Training large number of deep trees costs higher in terms of computing and memory usage
+- More difficult to interpret comapares to individual decision trees 
+- It has poorperformance on imbalanced data  
 
 
   
