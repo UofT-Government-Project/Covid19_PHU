@@ -108,6 +108,7 @@ Once data is merged, cleaned and preprocessed we hope use AWS and ProstreSQL to 
 - It has poorperformance on imbalanced data  
 
 
+
   
 
 
