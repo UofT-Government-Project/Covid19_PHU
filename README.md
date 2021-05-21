@@ -4,7 +4,7 @@
 ### The Machine learning model based on the new dataset:
 RandomForest Classifier from ML sklearn library
 
-### Based on the new dataset,our prediction is the fatal cases of covid cases.The dataset lacks continues features that have an impact on our predications. 
+Based on the new dataset,our prediction is the fatal cases of covid cases.The dataset lacks continues features that have an impact on our predications. 
 These features could be different factors of health conditions.Our data is limited to very few factores such as age, gender, location and date that are not corrolated to our outcome.
 
 ### Cleaning and Processing:
