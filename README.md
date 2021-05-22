@@ -31,6 +31,8 @@ These features could be different factors of existing health conditions such as 
 ### RandomForest Classifier ML model:
 - Accuracy score 0.915 - The high accuracy is due to high recovery rate of covid.
 
+### Confusion Matrix
+![confusion Matrix](Images/Confusion_matrix.png)
 
 ### Reasons for using RandomForest Classifier:
 
