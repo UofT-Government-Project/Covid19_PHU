@@ -4,8 +4,8 @@
 ### The Machine learning model based on the new dataset:
 RandomForest Classifier from ML sklearn library
 
-### Based on the new dataset,our prediction is the fatal cases of covid cases.The dataset lacks continues features that have an impact on our predications. 
-These features could be different factors of health conditions.Our data is limited to very few factores such as age, gender, location and date that are not corrolated to our outcome.
+### Based on the new dataset, our ML model predicts if a patient recovers or not from Covid based on the data we have.The dataset lacks continues features that could have a big  impact on our predications. 
+These features could be different factors of existing health conditions such as preconditins( Diabetes, heart conditions, asthma,etc).Our data is limited to very few factores such as age, gender, location and date that have low corrolated to our outcome.
 
 ### Cleaning and Processing:
 - Dropped unnecessary columns that have no impact on our predictation:
@@ -29,7 +29,7 @@ These features could be different factors of health conditions.Our data is limit
 - Split our data into training and testing by train_test_split function from sklearn library
 - Scaled the data
 ### RandomForest Classifier ML model:
-- Accuracy score 0.92 - The high accuracy is due to high recovery rate of covid.
+- Accuracy score 0.915 - The high accuracy is due to high recovery rate of covid.
 
 
 ### Reasons for using RandomForest Classifier:
