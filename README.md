@@ -41,7 +41,10 @@ Finally, data will be loaded into a PostgreSQL database for easy distribution. S
 Our dataset titled “Confirmed positive cases of COVID19 in Ontario” found here https://data.ontario.ca/dataset/confirmed-positive-cases-of-covid-19-in-ontario/resource/455fd63b-603d-4608-8216-7d8647f43350
 contained 524,950 data points. Since the file was very large, we decided to do a random sample of the data and use this smaller dataset in our analysis. We then split the data into four different tables, cleaned and preprocessed the tables and created the following ERD to use as our blueprint for our database.
 
-ERD PIC
+<img width="1338" alt="Covid19_PHU_ERD1" src="https://user-images.githubusercontent.com/75905911/119560169-95f8d980-bd71-11eb-9856-01d72383ade1.png">
+
+<img width="1304" alt="Covid19_PHU_ERD2" src="https://user-images.githubusercontent.com/75905911/119560180-98f3ca00-bd71-11eb-9926-755b8e07d208.png">
+
 
 The first table PHU_Locations contains the following columns: id, PHU_id (primary key), Reporting_PHU, Reporting_PHU_Address, Reporting_PHU_Latitude and PHU_Longitude. The second table PHU has the following columns: id (primary key), age_group, gender, outcome, outbreak, phu_id (foreign key), week, month, year. The columns for the third table, PHU_Gender_final are: index, phu_id (foreign key), gender, gender_count. Lastly, the fourth table called PHU_Age_Group_Final contains the following columns: index, phu_id (foreign key) and age_group_count.
 
