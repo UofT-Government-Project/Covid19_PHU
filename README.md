@@ -78,35 +78,14 @@ And images for our tables with data:
 
 <img width="1067" alt="phu" src="https://user-images.githubusercontent.com/75905911/119559821-2aaf0780-bd71-11eb-81a4-6d1cfcb17753.png">
 
-<img width="495" alt="phu_age_group_final" src="https://user-images.githubusercontent.com/75905911/119559835-2da9f800-bd71-11eb-96ea-424241034d8e.png">
-
 <img width="474" alt="phu_gender_final" src="https://user-images.githubusercontent.com/75905911/119559849-30a4e880-bd71-11eb-8b03-d13f02aeb44c.png">
+
+<img width="495" alt="phu_age_group_final" src="https://user-images.githubusercontent.com/75905911/119559835-2da9f800-bd71-11eb-96ea-424241034d8e.png">
 
 
 ## pgAdmin Table Join
 Our last and 5th table was created using an sql inner join of all four tables. The SQL code is here:
-
----Joining all four tables
-SELECT phu_locations.id, 
-    phu_locations.phu_id, 
-    phu_locations.Reporting_PHU,
-    phu_locations.reporting_phu_address, 
-    phu_locations.reporting_phu_latitude, 
-    phu_locations.reporting_phu_longitude, 
-    phu.outcome,    
-    phu.outbreak, 
-    phu.week, 
-    phu.month, 
-    phu.year, 
-    phu_age_group_final.age_group, 
-    phu_age_group_final.age_group_count, 
-    phu_gender_final.gender, 
-    phu_gender_final.gender_count 
-INTO phu_joined
-FROM phu_locations
-INNER JOIN phu ON phu_locations.id = phu.id
-INNER JOIN phu_age_group_final ON phu_locations.phu_id = phu_age_group_final.phu_id
-INNER JOIN phu_gender_final ON phu_locations.phu_id = phu_gender_final.phu_id
+<img width="577" alt="Screen Shot 2021-05-25 at 4 07 08 PM" src="https://user-images.githubusercontent.com/75905911/119561524-49ae9900-bd73-11eb-8d8c-41523a9e20ce.png">
 
 
 And an image of the table with the data can be seen here:
