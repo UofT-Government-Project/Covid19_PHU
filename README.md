@@ -39,7 +39,7 @@ Finally, data will be loaded into a PostgreSQL database for easy distribution. S
 ## Database- ERD
 
 Our dataset titled “Confirmed positive cases of COVID19 in Ontario” found here https://data.ontario.ca/dataset/confirmed-positive-cases-of-covid-19-in-ontario/resource/455fd63b-603d-4608-8216-7d8647f43350
-contained 524950 data points. Since the file was very large, we decided to do a random sample of the data and use this smaller dataset in our analysis. We then split the data into four different tables, cleaned and preprocessed the tables and created the following ERD to use as our blueprint for our database.
+contained 524,950 data points. Since the file was very large, we decided to do a random sample of the data and use this smaller dataset in our analysis. We then split the data into four different tables, cleaned and preprocessed the tables and created the following ERD to use as our blueprint for our database.
 
 ERD PIC
 
