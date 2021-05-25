@@ -36,17 +36,118 @@ Finally, data will be loaded into a PostgreSQL database for easy distribution. S
 
 ![Image](https://github.com/UofT-Government-Project/Covid19_PHU/blob/faridah/ETL_Whole.PNG)
 
-## Database Mock-Up
-Two data sources were used to create the ERD for our project. The first dataset is the "Status of COVID-19 cases in Ontario by Public Health Unit (PHU)". Columns' details are: _id, FILE_DATE, PHU_NAME, PHU_NUM, ACTIVE_CASES, RESOLVED_CASES and DEATHS. The second dataset titled "Ministry of Health Public Health Unit Boundary" has the following columns: FID, OGF_ID, PHU_ID, NAME_ENG, NAME_FR, GEO_UPD_DT, EFF_DATE, Shape__Area, and Shape__Length.
+## Database- ERD
+
+Our dataset titled “Confirmed positive cases of COVID19 in Ontario” found here https://data.ontario.ca/dataset/confirmed-positive-cases-of-covid-19-in-ontario/resource/455fd63b-603d-4608-8216-7d8647f43350
+contained 524950 data points. Since the file was very large, we decided to do a random sample of the data and use this smaller dataset in our analysis. We then split the data into four different tables, cleaned and preprocessed the tables and created the following ERD to use as our blueprint for our database.
+
+ERD PIC
+
+The first table PHU_Locations contains the following columns: id, PHU_id (primary key), Reporting_PHU, Reporting_PHU_Address, Reporting_PHU_Latitude and PHU_Longitude. The second table PHU has the following columns: id (primary key), age_group, gender, outcome, outbreak, phu_id (foreign key), week, month, year. The columns for the third table, PHU_Gender_final are: index, phu_id (foreign key), gender, gender_count. Lastly, the fourth table called PHU_Age_Group_Final contains the following columns: index, phu_id (foreign key) and age_group_count.
+
+## Database Storage
+A database instance was created on AWS’ RDS and buckets were created on AWS’ S3 to hold all four tables.
+
+<img width="1082" alt="AWS RDS" src="https://user-images.githubusercontent.com/75905911/119559642-f2a7c480-bd70-11eb-81bd-8575e47d3c99.png">
+
+<img width="1110" alt="AWS S3" src="https://user-images.githubusercontent.com/75905911/119559660-f9ced280-bd70-11eb-9c77-85b4c9e519b5.png">
+
+## Connection String
+To connect our database, we used SQLAlchemy’s create engine
+
+<img width="1381" alt="Connection String" src="https://user-images.githubusercontent.com/75905911/119559713-09e6b200-bd71-11eb-959b-462f747fbfcf.png">
 
 
+<img width="1067" alt="phu" src="https://user-images.githubusercontent.com/75905911/119559764-179c3780-bd71-11eb-8609-e19609139ea0.png">
+<img width="495" alt="phu_age_group_final" src="https://user-images.githubusercontent.com/75905911/119559766-18cd6480-bd71-11eb-97f9-8d796569b7ea.png">
+<img width="474" alt="phu_gender_final" src="https://user-images.githubusercontent.com/75905911/119559769-1965fb00-bd71-11eb-870b-4902914dda97.png">
+## pgAdmin Database
+Our four tables and their corresponding data were imported to pgAdmin.
+The following is our sql for table creation:
 
-### ERD
-<img width="1377" alt="Screen Shot 2021-05-16 at 3 34 26 PM" src="https://user-images.githubusercontent.com/75905911/118410241-76b8c880-b65c-11eb-895b-6b70acd25844.png">
+--Create PHU_locations table
+CREATE TABLE PHU_locations (
+    id INT,
+    PHU_id INT,
+    Reporting_PHU VARCHAR,
+    Reporting_PHU_Address VARCHAR,
+    Reporting_PHU_Latitude FLOAT,
+    Reporting_PHU_Longitude FLOAT,
+    PRIMARY KEY(PHU_id)
+);
 
-Primary Keys for both tables are: _id for "Status of COVID-19 cases in Ontario by Public Health Unit (PHU)" and PHU_ID for "Ministry of Health Public Health Unit Boundary". Although the names of the columns are different, both columns hold the same numeric unique identifier for each Ontario Public Health Unit. PHU_ID is also a foreign key for "Ministry of Health Public Health Unit Boundary". The tables will be joined using the PHU_NUM and PHU_IDs columns from both tables since they contain the same unique identifiers. Other foreign key assignments are: PHU_NAME in "Status of COVID-19 cases in Ontario by Public Health Unit (PHU)" and NAME_ENG in "Ministry of Health Public Health Unit Boundary".
+--Create PHU table
+CREATE TABLE PHU (
+    id INT,
+    age_group VARCHAR,
+    gender VARCHAR,
+    outcome VARCHAR,
+    outbreak VARCHAR,
+    phu_id INT,
+    week INT,
+    month INT,
+    year INT,
+    PRIMARY KEY (id),
+    FOREIGN KEY (phu_id) REFERENCES PHU_locations (PHU_id)
+);
 
-Once data is merged, cleaned and preprocessed we hope use AWS and ProstreSQL to store and share data. 
+--Create PHU_Gender_Final table
+CREATE TABLE PHU_Gender_Final (
+    index INT,
+    phu_id INT,
+    gender VARCHAR,
+    gender_count INT,
+    FOREIGN KEY (phu_id) REFERENCES PHU_locations (PHU_id)
+);
+
+
+--Create PHU_Age_Group_Final table
+CREATE TABLE PHU_Age_Group_Final (
+    index INT,
+    phu_id INT,
+    age_group VARCHAR,
+    age_group_count INT,
+    FOREIGN KEY (phu_id) REFERENCES PHU_locations (PHU_id)
+);
+
+And images for our tables with data:
+
+<img width="1067" alt="phu" src="https://user-images.githubusercontent.com/75905911/119559821-2aaf0780-bd71-11eb-81a4-6d1cfcb17753.png">
+<img width="495" alt="phu_age_group_final" src="https://user-images.githubusercontent.com/75905911/119559835-2da9f800-bd71-11eb-96ea-424241034d8e.png">
+<img width="474" alt="phu_gender_final" src="https://user-images.githubusercontent.com/75905911/119559849-30a4e880-bd71-11eb-8b03-d13f02aeb44c.png">
+<img width="926" alt="PHU_locations" src="https://user-images.githubusercontent.com/75905911/119559854-33074280-bd71-11eb-9329-b5cf19da85fb.png">
+
+## pgAdmin Table Join
+Our last and 5th table was created using an sql inner join of all four tables. The SQL code is here:
+
+---Joining all four tables
+SELECT phu_locations.id, 
+    phu_locations.phu_id, 
+    phu_locations.Reporting_PHU,
+    phu_locations.reporting_phu_address, 
+    phu_locations.reporting_phu_latitude, 
+    phu_locations.reporting_phu_longitude, 
+    phu.outcome,    
+    phu.outbreak, 
+    phu.week, 
+    phu.month, 
+    phu.year, 
+    phu_age_group_final.age_group, 
+    phu_age_group_final.age_group_count, 
+    phu_gender_final.gender, 
+    phu_gender_final.gender_count 
+INTO phu_joined
+FROM phu_locations
+INNER JOIN phu ON phu_locations.id = phu.id
+INNER JOIN phu_age_group_final ON phu_locations.phu_id = phu_age_group_final.phu_id
+INNER JOIN phu_gender_final ON phu_locations.phu_id = phu_gender_final.phu_id
+
+
+And an image of the table with the data can be seen here:
+<img width="1141" alt="phu_joined1" src="https://user-images.githubusercontent.com/75905911/119559938-50d4a780-bd71-11eb-9279-8930bb3c4b1a.png">
+<img width="1146" alt="phu_joined2" src="https://user-images.githubusercontent.com/75905911/119559952-53370180-bd71-11eb-93ee-719e319c66e4.png">
+
+
 
 ## Machine Learning
 
@@ -63,6 +164,5 @@ The model is going to predict PHUs with high active cases to help the government
 ### The reasons for choosing the ML model: 
 The model has high accuracy and is robust to outliers. There are also low correlations in features that requires multiple learning algorithms. 
 
-![ML Flowchart](Pictures/ML_flowchart.png)
 
 
