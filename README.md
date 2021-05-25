@@ -61,58 +61,17 @@ To connect our database, we used SQLAlchemy’s create engine
 <img width="1381" alt="Connection String" src="https://user-images.githubusercontent.com/75905911/119559713-09e6b200-bd71-11eb-959b-462f747fbfcf.png">
 
 
-<img width="1067" alt="phu" src="https://user-images.githubusercontent.com/75905911/119559764-179c3780-bd71-11eb-8609-e19609139ea0.png">
-<img width="495" alt="phu_age_group_final" src="https://user-images.githubusercontent.com/75905911/119559766-18cd6480-bd71-11eb-97f9-8d796569b7ea.png">
-<img width="474" alt="phu_gender_final" src="https://user-images.githubusercontent.com/75905911/119559769-1965fb00-bd71-11eb-870b-4902914dda97.png">
-
 ## pgAdmin Database
 Our four tables and their corresponding data were imported to pgAdmin.
 The following is our sql for table creation:
+<img width="585" alt="Screen Shot 2021-05-25 at 4 01 57 PM" src="https://user-images.githubusercontent.com/75905911/119560970-99409500-bd72-11eb-9b0d-9ea81cd44e75.png">
 
---Create PHU_locations table
-CREATE TABLE PHU_locations (
-    id INT,
-    PHU_id INT,
-    Reporting_PHU VARCHAR,
-    Reporting_PHU_Address VARCHAR,
-    Reporting_PHU_Latitude FLOAT,
-    Reporting_PHU_Longitude FLOAT,
-    PRIMARY KEY(PHU_id)
-);
+<img width="548" alt="Screen Shot 2021-05-25 at 4 02 50 PM" src="https://user-images.githubusercontent.com/75905911/119561049-b1181900-bd72-11eb-91f7-8c76d8b19a10.png">
 
---Create PHU table
-CREATE TABLE PHU (
-    id INT,
-    age_group VARCHAR,
-    gender VARCHAR,
-    outcome VARCHAR,
-    outbreak VARCHAR,
-    phu_id INT,
-    week INT,
-    month INT,
-    year INT,
-    PRIMARY KEY (id),
-    FOREIGN KEY (phu_id) REFERENCES PHU_locations (PHU_id)
-);
+<img width="570" alt="Screen Shot 2021-05-25 at 4 03 22 PM" src="https://user-images.githubusercontent.com/75905911/119561087-c12ff880-bd72-11eb-9904-cceaf3a8ff09.png">
 
---Create PHU_Gender_Final table
-CREATE TABLE PHU_Gender_Final (
-    index INT,
-    phu_id INT,
-    gender VARCHAR,
-    gender_count INT,
-    FOREIGN KEY (phu_id) REFERENCES PHU_locations (PHU_id)
-);
+<img width="584" alt="Screen Shot 2021-05-25 at 4 03 46 PM" src="https://user-images.githubusercontent.com/75905911/119561139-d0af4180-bd72-11eb-8077-6420c49713f2.png">
 
-
---Create PHU_Age_Group_Final table
-CREATE TABLE PHU_Age_Group_Final (
-    index INT,
-    phu_id INT,
-    age_group VARCHAR,
-    age_group_count INT,
-    FOREIGN KEY (phu_id) REFERENCES PHU_locations (PHU_id)
-);
 
 And images for our tables with data:
 
