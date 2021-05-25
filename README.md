@@ -64,6 +64,7 @@ To connect our database, we used SQLAlchemy’s create engine
 <img width="1067" alt="phu" src="https://user-images.githubusercontent.com/75905911/119559764-179c3780-bd71-11eb-8609-e19609139ea0.png">
 <img width="495" alt="phu_age_group_final" src="https://user-images.githubusercontent.com/75905911/119559766-18cd6480-bd71-11eb-97f9-8d796569b7ea.png">
 <img width="474" alt="phu_gender_final" src="https://user-images.githubusercontent.com/75905911/119559769-1965fb00-bd71-11eb-870b-4902914dda97.png">
+
 ## pgAdmin Database
 Our four tables and their corresponding data were imported to pgAdmin.
 The following is our sql for table creation:
