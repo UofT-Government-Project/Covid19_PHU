@@ -49,6 +49,7 @@ These features could be different factors of existing health conditions such as 
 - More difficult to interpret comapares to individual decision trees 
 - It has poorperformance on imbalanced data  
 
+## Database
 
 The general process that we will be following is as shown below:
 
