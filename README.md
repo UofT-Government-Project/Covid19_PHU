@@ -1,20 +1,21 @@
-# Covid-19 and Public Health Units in Ontario
 
-## Communication protocol
-A group chat has been set up in Slack.  This will be the primary platform for ongoing correspondence by each team member while working on our individual roles for each segment.  Every Monday and Wednesday evenings will be an opportunity to meet via zoom and discussing the current week's agenda.  Every Sunday the team will connect via Google Meet as well to finalize the submission of the current week.  Additional meetings will be set up throughout the week when needed.<br>
-Phone numbers have been exchanged and a group chat set up on WhatsApp for ad hoc communications as well. <br>
-*Collaborators:* [Lida](https://github.com/lidajav), [Tarana](https://github.com/taranahassan), [Michelle](https://github.com/MichelleGoldfinger), [Blessing](https://github.com/Physsyb), [Faridah](https://github.com/faridah-m).
+## Machine Learning- Week2
 
-### Team Member roles:
-***Tarana:***  Setting up repository, branches and updating README.md.<br>
-***Faridah:***  Explanation of the ETL process on data.<br>
-***Michelle:***  Creating an ERD for the mockup database to be used.<br>
-***Lida:*** Creating the mockup machine learning model to be used. <br>
-***Blessing:***  Explanation of which technologies group will be using and why.
+### The Machine learning model based on the new dataset:
+RandomForest Classifier from ML sklearn library
 
-## Extract, Transform & Load
+### Based on the new dataset, our ML model predicts if a patient recovers or not from Covid based on the data we have.The dataset lacks continues features that could have a big  impact on our predications. 
+These features could be different factors of existing health conditions such as preconditins( Diabetes, heart conditions, asthma,etc).Our data is limited to very few factores such as age, gender, location and date that have low corrolated to our outcome.
 
-Two sets of data have been used for the machine learning model; these datasets will be providing a prediction of which Public Health Unit(s) may have a potential risk of higher active cases. We have been tasked with combining these two datasets, cleaning the data so that all participants can use the final combined dataset and finally saving the data into a PostgreSQL database.
+### Cleaning and Processing:
+- Dropped unnecessary columns that have no impact on our predictation:
+ -Renamed the column names
+ -Broke Date to week, month and year
+ -Checked the categorial features
+- Check the unique value counts for PHU_ID to see if binning is required
+- Plot the density of value count of PHU_ID to determine what values to replace.
+ ![PHU Density](Images/PHU_density.png)
+
 
 The general process that we will be following is as shown below:
 
@@ -94,21 +95,43 @@ And an image of the table with the data can be seen here:
 <img width="1146" alt="phu_joined2" src="https://user-images.githubusercontent.com/75905911/119559952-53370180-bd71-11eb-93ee-719e319c66e4.png">
 
 
+=======
+- Binned all PHU_IDs with less than 400 to keep the number of features at 10
+- Converted the categorial features to continues by using OneHotEncoder from SKlearn library
+- Merged the dataframes and dropped the categorial columns
 
-## Machine Learning
-
-### The Machine learning model: 
-RandomForest classifier (RFC) from ML sklearn library
+### Set the Target and features
+- Removed ' Not recivered' from outcome so we end up with two classes 'Fatal' and 'Recovered'
+- Set Fatal cases as our target(y)
+- Removed three columns ( fatal cases and resolved cases) from our dataframe to set up our features (X)
 
 ### Training and testing set:  
-Dates (broken into month and year), PHU (public health unit), location, number of Covid cases resolved and death cases per PHU.
+- Split our data into training and testing by train_test_split function from sklearn library
+- Scaled the data
+### RandomForest Classifier ML model:
+- Accuracy score 0.915 - The high accuracy is due to high recovery rate of covid.
 
-### Target: 
-Active cases.
-The model is going to predict PHUs with high active cases to help the government for allocating budgets. 
+### Confusion Matrix
+![confusion Matrix](Images/Confusion_matrix.png)
 
-### The reasons for choosing the ML model: 
-The model has high accuracy and is robust to outliers. There are also low correlations in features that requires multiple learning algorithms. 
+### Reasons for using RandomForest Classifier:
+
+- It reduces overfitting in decision trees that improves high accuracy
+- The model is robust to outliers.
+- It works well with both categorial and continues values.  
+- There are also low correlations in features that requires multiple learning algorithms.
+- It automates missing values in the data.
+ 
+
+
+### Limitations:
+
+- Training large number of deep trees costs higher in terms of computing and memory usage
+- More difficult to interpret comapares to individual decision trees 
+- It has poorperformance on imbalanced data  
+
+
+
 
 
 
