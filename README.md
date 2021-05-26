@@ -14,6 +14,7 @@ These features could be different factors of existing health conditions such as 
  -Checked the categorial features
 - Check the unique value counts for PHU_ID to see if binning is required
 - Plot the density of value count of PHU_ID to determine what values to replace.
+
  ![PHU Density](Images/PHU_density.png)
  
  - Binned all PHU_IDs with less than 400 to keep the number of features at 10
