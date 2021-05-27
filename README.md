@@ -66,3 +66,8 @@ The model has high accuracy and is robust to outliers. There are also low correl
 
 ![ML Flowchart](Pictures/ML_flowchart.png)
 
+## Google Presentation
+https://docs.google.com/presentation/d/1R-9hwFz2FQSbQqZFsBUwxTXCbG8xHMHgzqgI43Wb4a4/edit?usp=sharing
+
+
+
