@@ -86,13 +86,29 @@ And images for our tables with data:
 
 
 ## pgAdmin Table Join
-Our last and 5th table was created using an sql inner join of all four tables. The SQL code is here:
+We created 3 joined taables. All three tables were created with inner joins. The first, was a join of all four tables. The SQL code is here:
 <img width="577" alt="Screen Shot 2021-05-25 at 4 07 08 PM" src="https://user-images.githubusercontent.com/75905911/119561524-49ae9900-bd73-11eb-8d8c-41523a9e20ce.png">
 
 
 And an image of the table with the data can be seen here:
 <img width="1141" alt="phu_joined1" src="https://user-images.githubusercontent.com/75905911/119559938-50d4a780-bd71-11eb-9279-8930bb3c4b1a.png">
 <img width="1146" alt="phu_joined2" src="https://user-images.githubusercontent.com/75905911/119559952-53370180-bd71-11eb-93ee-719e319c66e4.png">
+
+The second table called "phu_by_age_and_outcome" was created by joining the phu_locations, phu and phu_age_final_tables. The sql can be seen here:
+
+<img width="614" alt="phu_by_age_and_outcome" src="https://user-images.githubusercontent.com/75905911/119879405-34637700-bef9-11eb-8c3c-3e775499f29d.png">
+
+
+And an image of the table:
+<img width="1091" alt="phu_by_age_and_outcome" src="https://user-images.githubusercontent.com/75905911/119879902-b6ec3680-bef9-11eb-8f79-191951a1fe4e.png">
+
+
+The third table we created is called "phu_by_gender_and_outcome" was created by joining phu_locations, phu and phu_gender_final tables. The SQL for the new table is:
+<img width="577" alt="phu_by_gender_and_outcome" src="https://user-images.githubusercontent.com/75905911/119880078-e13df400-bef9-11eb-8de1-acae1db62c3e.png">
+
+
+And an image of the table:
+<img width="1073" alt="phu_by_gender_and_outcome" src="https://user-images.githubusercontent.com/75905911/119879939-c10e3500-bef9-11eb-8175-eafed7f30472.png">
 
 
 =======
