@@ -26,3 +26,4 @@ FROM (SELECT phu_id,gender FROM phu) AS table1
 GROUP BY table1.phu_id,table1.gender
 ORDER BY phu_id;
 ------------------------------------------------------------
+
