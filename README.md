@@ -14,8 +14,42 @@ These features could be different factors of existing health conditions such as 
  -Checked the categorial features
 - Check the unique value counts for PHU_ID to see if binning is required
 - Plot the density of value count of PHU_ID to determine what values to replace.
- ![PHU Density](Images/PHU_density.png)
 
+ ![PHU Density](Images/PHU_density.png)
+ 
+ - Binned all PHU_IDs with less than 400 to keep the number of features at 10
+- Converted the categorial features to continues by using OneHotEncoder from SKlearn library
+- Merged the dataframes and dropped the categorial columns
+
+### Set the Target and features
+- Removed ' Not recivered' from outcome so we end up with two classes 'Fatal' and 'Recovered'
+- Set Fatal cases as our target(y)
+- Removed three columns ( fatal cases and resolved cases) from our dataframe to set up our features (X)
+
+### Training and testing set:  
+- Split our data into training and testing by train_test_split function from sklearn library
+- Scaled the data
+### RandomForest Classifier ML model:
+- Accuracy score 0.915 - The high accuracy is due to high recovery rate of covid.
+
+### Confusion Matrix
+![confusion Matrix](Images/Confusion_matrix.png)
+
+### Reasons for using RandomForest Classifier:
+
+- It reduces overfitting in decision trees that improves high accuracy
+- The model is robust to outliers.
+- It works well with both categorial and continues values.  
+- There are also low correlations in features that requires multiple learning algorithms.
+- It automates missing values in the data.
+ 
+### Limitations:
+
+- Training large number of deep trees costs higher in terms of computing and memory usage
+- More difficult to interpret comapares to individual decision trees 
+- It has poorperformance on imbalanced data  
+
+## Database
 
 The general process that we will be following is as shown below:
 
@@ -94,6 +128,7 @@ And an image of the table with the data can be seen here:
 <img width="1141" alt="phu_joined1" src="https://user-images.githubusercontent.com/75905911/119559938-50d4a780-bd71-11eb-9279-8930bb3c4b1a.png">
 <img width="1146" alt="phu_joined2" src="https://user-images.githubusercontent.com/75905911/119559952-53370180-bd71-11eb-93ee-719e319c66e4.png">
 
+
 The second table called "phu_by_age_and_outcome" was created by joining the phu_locations, phu and phu_age_group_final tables. The sql can be seen here:
 
 <img width="640" alt="phu_by_age_and_outcome" src="https://user-images.githubusercontent.com/75905911/119880776-9670ac00-befa-11eb-8920-9e36496aca8b.png">
@@ -146,9 +181,4 @@ And an image of the table:
 - Training large number of deep trees costs higher in terms of computing and memory usage
 - More difficult to interpret comapares to individual decision trees 
 - It has poorperformance on imbalanced data  
-
-
-
-
-
 
