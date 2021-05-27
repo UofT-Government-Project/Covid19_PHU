@@ -94,9 +94,8 @@ And an image of the table with the data can be seen here:
 <img width="1141" alt="phu_joined1" src="https://user-images.githubusercontent.com/75905911/119559938-50d4a780-bd71-11eb-9279-8930bb3c4b1a.png">
 <img width="1146" alt="phu_joined2" src="https://user-images.githubusercontent.com/75905911/119559952-53370180-bd71-11eb-93ee-719e319c66e4.png">
 
-The second table called "phu_by_age_and_outcome" was created by joining the phu_locations, phu and phu_age_final_tables. The sql can be seen here:
-
-<img width="614" alt="phu_by_age_and_outcome" src="https://user-images.githubusercontent.com/75905911/119879405-34637700-bef9-11eb-8c3c-3e775499f29d.png">
+The second table called "phu_by_age_and_outcome" was created by joining the phu_locations, phu and phu_age_group_final tables. The sql can be seen here:
+<img width="640" alt="phu_by_age_and_outcome" src="https://user-images.githubusercontent.com/75905911/119880776-9670ac00-befa-11eb-8920-9e36496aca8b.png">
 
 
 And an image of the table:
