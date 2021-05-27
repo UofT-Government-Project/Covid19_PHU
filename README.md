@@ -95,6 +95,7 @@ And an image of the table with the data can be seen here:
 <img width="1146" alt="phu_joined2" src="https://user-images.githubusercontent.com/75905911/119559952-53370180-bd71-11eb-93ee-719e319c66e4.png">
 
 The second table called "phu_by_age_and_outcome" was created by joining the phu_locations, phu and phu_age_group_final tables. The sql can be seen here:
+
 <img width="640" alt="phu_by_age_and_outcome" src="https://user-images.githubusercontent.com/75905911/119880776-9670ac00-befa-11eb-8920-9e36496aca8b.png">
 
 
@@ -103,6 +104,7 @@ And an image of the table:
 
 
 The third table we created is called "phu_by_gender_and_outcome" was created by joining phu_locations, phu and phu_gender_final tables. The SQL for the new table is:
+
 <img width="577" alt="phu_by_gender_and_outcome" src="https://user-images.githubusercontent.com/75905911/119880078-e13df400-bef9-11eb-8de1-acae1db62c3e.png">
 
 
