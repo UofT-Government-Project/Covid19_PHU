@@ -21,9 +21,9 @@ These features could be different factors of existing health conditions such as 
 - Merged the dataframes and dropped the categorial columns
 
 ### Set the Target and features
-- Removed ' Not recivered' from outcome so we end up with two classes 'Fatal' and 'Recovered'
-- Set Fatal cases as our target(y)
-- Removed three columns ( fatal cases and resolved cases) from our dataframe to set up our features (X)
+- Combined 'Not resolved' and 'Fatal' to 'Not recovered' so we end up with two classes of 'Not Recovered' and 'Recovered'
+- Set 'Not Recovered' cases as our target(y)
+- Removed the Outcome column from our dataframe to set up our features (X)
 
 ### Training and testing set:  
 - Split our data into training and testing by train_test_split function from sklearn library
