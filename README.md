@@ -7,19 +7,6 @@
 ## Overview
 This project is to showcase the strategical thinking and group efforts to predict and analyze the Covid-19 data. It is to recognize the trends of the highs and lows of Covid 19 cases at each of the 34 Public Health Unit in Ontario, Canada.<br>
 <br>
-## Research goal
-***How do we determine the eligibility to excute a vaccine roll-out program?***
-
-The goal of this analysis is to create a standard operating procedure (SOP) to determine a vaccine roll-out program.   The process stated here is to assist the Ministry of Health to identify, prioritize and execute vaccinations based on age group and or gender for future epidemics and pandemics.  <br>
-Data of current confirmed Covid-19 cases have been collected and used to create a machine learning model that can provide predictions and help understand the probability of higher cases within a specific attribute of demographics.  <br>
-The same data has been used for exploratory analysis to isolate results of each age group and gender for each Public Health Units.  <br>
-Below are the steps taken to provide results for this analysis.
-
-<br>
-**Data source:**<br>
-
-[Ontario Data Catalogue](https://data.ontario.ca/dataset/confirmed-positive-cases-of-covid-19-in-ontario/resource/455fd63b-603d-4608-8216-7d8647f43350)
-
 ## Communication protocol
 A group chat has been set up in Slack.  This will be the primary platform for ongoing correspondence by each team member while working on our individual roles for each segment.  Every Monday and Wednesday evenings will be an opportunity to meet via zoom and discussing the current week's agenda.  Every Sunday the team will connect via Google Meet as well to finalize the submission of the current week.  Additional meetings will be set up throughout the week when needed.<br>
 Phone numbers have been exchanged and a group chat set up on WhatsApp for ad hoc communications as well. <br>
@@ -31,6 +18,19 @@ Phone numbers have been exchanged and a group chat set up on WhatsApp for ad hoc
 ***Michelle:***  Creating an ERD and database.<br>
 ***Lida:*** Creating the machine learning model. <br>
 ***Blessing:***  Creating dashboard using a BI tool.
+
+# Research goal
+***How do we determine the eligibility to excute a vaccine roll-out program?***
+
+The goal of this analysis is to create a standard operating procedure (SOP) to determine a vaccine roll-out program.   The process stated here is to assist the Ministry of Health to identify, prioritize and execute vaccinations based on age group and or gender for future epidemics and pandemics.  <br>
+Data of current confirmed Covid-19 cases have been collected and used to create a machine learning model that can provide predictions and help understand the probability of higher cases within a specific attribute of demographics.  <br>
+The same data has been used for exploratory analysis to isolate results of each age group and gender for each Public Health Units.  <br>
+Below are the steps taken to provide results for this analysis.
+
+<br>
+**Data source:**<br>
+
+[Ontario Data Catalogue](https://data.ontario.ca/dataset/confirmed-positive-cases-of-covid-19-in-ontario/resource/455fd63b-603d-4608-8216-7d8647f43350)
 
 ## Extract, Transform & Load
 
