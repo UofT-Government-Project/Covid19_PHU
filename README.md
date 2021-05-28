@@ -49,14 +49,13 @@ For the extract process, the sample dataset was pulled and read using Pandas in 
 
 ### Transform:
 
-The transformation process was required to clean data:<br>
+The transformation process was required to clean data.  The primary aim of the transformation process is to transform the data into a consistent structure.<br>
   - drop any columns deemed unnecessary to the analysis <br>
   - drop any null values<br>
   - renaming column names for efficiency<br>
   - separating the case date column into week, month and year <br>
   - filter for specific requirements to be used for each part of project. <br>
-  <br>
-The primary aim of the transformation process is to transform the data into a consistent structure.
+
 
 ### Load:
 
