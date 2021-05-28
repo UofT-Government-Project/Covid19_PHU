@@ -55,6 +55,7 @@ The transformation process was required to clean data:<br>
   - renaming column names for efficiency<br>
   - separating the case date column into week, month and year <br>
   - filter for specific requirements to be used for each part of project. <br>
+  <br>
 The primary aim of the transformation process is to transform the data into a consistent structure.
 
 ### Load:
