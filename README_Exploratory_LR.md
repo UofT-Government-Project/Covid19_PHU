@@ -32,13 +32,13 @@ This is about exploring a machine learning model to predit exponential quatntiti
 ### Set the Target and features
 
 - Set 'Deaths' as our target(y)
-- The ordinated date was the feaure (X)
+- The ordinal date was the feaure (X)
 
 ### Training and testing set:  
 - Split our data into training and testing by train_test_split function from sklearn library
 
 ### How good did the model fit?
-- The R_squared score was 0.96 which was pretty high. 
+- The R_squared score was strong at 0.96
 
 ### Prediction versus Target graph 
  
