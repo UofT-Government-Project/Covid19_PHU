@@ -21,7 +21,7 @@ These features could be different factors of existing health conditions such as 
 - Merged the dataframes and dropped the categorial columns
 
 ### Set the Target and features
-- Removed rows with 'Not resolved' in 'Outcome'  columnand to limit the data to two classes of 'Fatal' and 'Resolved' as 'Not Resolved' could end up in either 'Resolved' or 'Fatal' later.
+- Removed rows with 'Not resolved' in 'Outcome'  column to create two classes of 'Fatal' and 'Resolved'.The reason for remiving 'Not Resolved' was that this case could end up with either 'Resolved' or 'Fatal' later.
 - Set 'Resolved' cases as our target(y)
 - Removed the Outcome column from our dataframe to set up our features (X)
 
