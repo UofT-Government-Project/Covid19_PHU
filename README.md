@@ -8,10 +8,10 @@ Based on the new dataset, our ML model predicts if a patient recovers or not fro
 These features could be different factors of existing health conditions such as preconditins( Diabetes, heart conditions, asthma,etc).Our data is limited to very few factores such as age, gender, location and date that have low corrolated to our outcome.
 
 ### Cleaning and Processing:
-- Dropped unnecessary columns that have no impact on our predictation:
- -Renamed the column names
- -Broke Date to week, month and year
- -Checked the categorial features
+- Dropped unnecessary columns that had no impact on our predictation:
+- Renamed the column names
+- Converted Date to an ordinal Day by using toordinal function.
+- Checked the categorial features and generated variable list
 - Check the unique value counts for PHU_ID to see if binning is required
 - Plot the density of value count of PHU_ID to determine what values to replace.
  ![PHU Density](Images/PHU_density.png)
@@ -21,18 +21,22 @@ These features could be different factors of existing health conditions such as 
 - Merged the dataframes and dropped the categorial columns
 
 ### Set the Target and features
-- Combined 'Not resolved' and 'Fatal' to 'Not recovered' so we end up with two classes of 'Not Recovered' and 'Recovered'
-- Set 'Not Recovered' cases as our target(y)
+- Removed rows with 'Not resolved' in 'Outcome'  columnand to limit the data to two classes of 'Fatal' and 'Resolved' as 'Not Resolved' could end up in either 'Resolved' or 'Fatal' later.
+- Set 'Resolved' cases as our target(y)
 - Removed the Outcome column from our dataframe to set up our features (X)
 
 ### Training and testing set:  
 - Split our data into training and testing by train_test_split function from sklearn library
-- Scaled the data
+- Scaled the data by using StandardScaler
+
 ### RandomForest Classifier ML model:
-- Accuracy score 0.915 - The high accuracy is due to high recovery rate of covid.
+- Accuracy score 0.908 - The high accuracy is due to high recovery rate of covid.
 
 ### Confusion Matrix
 ![confusion Matrix](Images/Confusion_matrix.png)
+
+The recall and precison look low due to lack of contributing factors. According to the confusion matrix, model has predicted 209 to be Fatal out of 3152 cases.The actual fatal cases were 194 and 29% of the cases or 57 cases were correctly predicted. 
+
 
 ### Reasons for using RandomForest Classifier:
 
