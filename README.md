@@ -33,7 +33,7 @@ These features could be different factors of existing health conditions such as 
 - Accuracy score 0.908 - The high accuracy is due to high recovery rate of covid.
 
 ### Confusion Matrix
-![confusion Matrix](Images/confusion_matrix.png)
+![confusion Matrix](Images/Confusion_matrix.png)
 
 The recall and precison look low due to lack of contributing factors. According to the confusion matrix, model has predicted 209 to be Fatal out of 3152 cases.The actual fatal cases were 194 and 29% of the cases or 57 cases were correctly predicted. 
 
