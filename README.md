@@ -1,21 +1,59 @@
-# Covid-19 and Public Health Units in Ontario
 
-## Communication protocol:
-A group chat has been set up in Slack.  This will be the primary platform for ongoing correspondence by each team member while working on our individual roles for each segment.  Every Monday and Wednesday evenings will be an opportunity to meet via zoom and discussing the current week's agenda.  Every Sunday the team will connect via Google Meet as well to finalize the submission of the current week.  Additional meetings will be set up throughout the week when needed.<br>
-Phone numbers have been exchanged and a group chat set up on WhatsApp for ad hoc communications as well. <br>
-*Collaborators:* [Lida](https://github.com/lidajav), [Tarana](https://github.com/taranahassan), [Michelle](https://github.com/MichelleGoldfinger), [Blessing](https://github.com/Physsyb), [Faridah](https://github.com/faridah-m).
+## Machine Learning- Week2
+
+### The Machine learning model based on the new dataset:
+RandomForest Classifier from ML sklearn library
+
+Based on the new dataset, our ML model predicts if a patient recovers or not from Covid based on the data we have.The dataset lacks continues features that could have a big  impact on our predications. 
+These features could be different factors of existing health conditions such as preconditins( Diabetes, heart conditions, asthma,etc).Our data is limited to very few factores such as age, gender, location and date that have low corrolated to our outcome.
+
+### Cleaning and Processing:
+- Dropped unnecessary columns that had no impact on our predictation:
+- Renamed the column names
+- Converted Date to an ordinal Day by using toordinal function.
+- Checked the categorial features and generated variable list
+- Check the unique value counts for PHU_ID to see if binning is required
+- Plot the density of value count of PHU_ID to determine what values to replace.
+
+ ![PHU Density](Images/PHU_density.png)
+ 
+ - Binned all PHU_IDs with less than 400 to keep the number of features at 10
+- Converted the categorial features to continues by using OneHotEncoder from SKlearn library
+- Merged the dataframes and dropped the categorial columns
+
+### Set the Target and features
+- Removed rows with 'Not resolved' in 'Outcome'  column to create two classes of 'Fatal' and 'Resolved'.The reason for remiving 'Not Resolved' was that this case could end up with either 'Resolved' or 'Fatal' later.
+- Set 'Resolved' cases as our target(y)
+- Removed the Outcome column from our dataframe to set up our features (X)
+
+### Training and testing set:  
+- Split our data into training and testing by train_test_split function from sklearn library
+- Scaled the data by using StandardScaler
+
+### RandomForest Classifier ML model:
+- Accuracy score 0.908 - The high accuracy is due to high recovery rate of covid.
+
+### Confusion Matrix
+![confusion Matrix](Images/Confusion_matrix.png)
+
+The recall and precison look low due to lack of contributing factors. According to the confusion matrix, model has predicted 209 to be Fatal out of 3152 cases.The actual fatal cases were 194 and 29% of the cases or 57 cases were correctly predicted. 
 
 
-### Team Member roles:
-***Tarana:***  Setting up repository, branches and updating README.md.<br>
-***Faridah:***  Explanation of the ETL process on data.<br>
-***Michelle:***  Creating an ERD for the mockup database to be used.<br>
-***Lida:*** Creating the mockup machine learning model to be used. <br>
-***Blessing:***  Explanation of which technologies group will be using and why.
+### Reasons for using RandomForest Classifier:
 
-## Extract, Transform & Load
+- It reduces overfitting in decision trees that improves high accuracy
+- The model is robust to outliers.
+- It works well with both categorial and continues values.  
+- There are also low correlations in features that requires multiple learning algorithms.
+- It automates missing values in the data.
+ 
+### Limitations:
 
-Two sets of data have been used for the machine learning model; these datasets will be providing a prediction of which Public Health Unit(s) may have a potential risk of higher active cases. We have been tasked with combining these two datasets, cleaning the data so that all participants can use the final combined dataset and finally saving the data into a PostgreSQL database.
+- Training large number of deep trees costs higher in terms of computing and memory usage
+- More difficult to interpret comapares to individual decision trees 
+- It has poorperformance on imbalanced data  
+
+## Database
 
 The general process that we will be following is as shown below:
 
@@ -37,37 +75,130 @@ Finally, data will be loaded into a PostgreSQL database for easy distribution. S
 
 ![Image](https://github.com/UofT-Government-Project/Covid19_PHU/blob/faridah/ETL_Whole.PNG)
 
-## Database Mock-Up
-Two data sources were used to create the ERD for our project. The first dataset is the "Status of COVID-19 cases in Ontario by Public Health Unit (PHU)". Columns' details are: _id, FILE_DATE, PHU_NAME, PHU_NUM, ACTIVE_CASES, RESOLVED_CASES and DEATHS. The second dataset titled "Ministry of Health Public Health Unit Boundary" has the following columns: FID, OGF_ID, PHU_ID, NAME_ENG, NAME_FR, GEO_UPD_DT, EFF_DATE, Shape__Area, and Shape__Length.
+## Database- ERD
+
+Our dataset titled “Confirmed positive cases of COVID19 in Ontario” found here https://data.ontario.ca/dataset/confirmed-positive-cases-of-covid-19-in-ontario/resource/455fd63b-603d-4608-8216-7d8647f43350
+contained 524,950 data points. Since the file was very large, we decided to do a random sample of the data and use this smaller dataset in our analysis. We then split the data into four different tables, cleaned and preprocessed the tables and created the following ERD to use as our blueprint for our database.
+
+<img width="1338" alt="Covid19_PHU_ERD1" src="https://user-images.githubusercontent.com/75905911/119560169-95f8d980-bd71-11eb-9856-01d72383ade1.png">
+
+<img width="1304" alt="Covid19_PHU_ERD2" src="https://user-images.githubusercontent.com/75905911/119560180-98f3ca00-bd71-11eb-9926-755b8e07d208.png">
 
 
-### ERD
-<img width="1431" alt="ERD_Covid19_PHU" src="https://user-images.githubusercontent.com/75905911/118367051-d20c8d00-b56e-11eb-873a-722179cd5bea.png">
+The first table PHU_Locations contains the following columns: id, PHU_id (primary key), Reporting_PHU, Reporting_PHU_Address, Reporting_PHU_Latitude and PHU_Longitude. The second table PHU has the following columns: id (primary key), age_group, gender, outcome, outbreak, phu_id (foreign key), week, month, year. The columns for the third table, PHU_Gender_final are: index, phu_id (foreign key), gender, gender_count. Lastly, the fourth table called PHU_Age_Group_Final contains the following columns: index, phu_id (foreign key) and age_group_count.
+
+## Database Storage
+A database instance was created on AWS’ RDS and buckets were created on AWS’ S3 to hold all four tables.
+
+<img width="1082" alt="AWS RDS" src="https://user-images.githubusercontent.com/75905911/119559642-f2a7c480-bd70-11eb-81bd-8575e47d3c99.png">
+
+<img width="1110" alt="AWS S3" src="https://user-images.githubusercontent.com/75905911/119559660-f9ced280-bd70-11eb-9c77-85b4c9e519b5.png">
+
+## Connection String
+To connect our database, we used SQLAlchemy’s create engine
+
+<img width="1381" alt="Connection String" src="https://user-images.githubusercontent.com/75905911/119559713-09e6b200-bd71-11eb-959b-462f747fbfcf.png">
 
 
-Primary Keys for both tables are: PHU_NUM for "Status of COVID-19 cases in Ontario by Public Health Unit (PHU)" and PHU_ID for "Ministry of Health Public Health Unit Boundary". Although the names of the columns are different, both columns hold the same numeric unique identifier for each Ontario Public Health Unit. PHU_ID is also a foreign key for "Ministry of Health Public Health Unit Boundary". The tables will be joined using the PHU_NUM and PHU_IDs columns from both tables since they contain the same unique identifiers. Other foreign key assignments are: PHU_NAME in "Status of COVID-19 cases in Ontario by Public Health Unit (PHU)" and NAME_ENG in "Ministry of Health Public Health Unit Boundary".
+## pgAdmin Database
+Our four tables and their corresponding data were imported to pgAdmin.
+The following is our sql for table creation:
 
-Once data is merged, cleaned and preprocessed we hope use AWS and ProstreSQL to store and share data. 
+<img width="585" alt="Screen Shot 2021-05-25 at 4 01 57 PM" src="https://user-images.githubusercontent.com/75905911/119560970-99409500-bd72-11eb-9b0d-9ea81cd44e75.png">
 
-## Machine Learning
+<img width="548" alt="Screen Shot 2021-05-25 at 4 02 50 PM" src="https://user-images.githubusercontent.com/75905911/119561049-b1181900-bd72-11eb-91f7-8c76d8b19a10.png">
 
-### The Machine learning model: 
-RandomForest classifier (RFC) from ML sklearn library
+<img width="570" alt="Screen Shot 2021-05-25 at 4 03 22 PM" src="https://user-images.githubusercontent.com/75905911/119561087-c12ff880-bd72-11eb-9904-cceaf3a8ff09.png">
+
+<img width="584" alt="Screen Shot 2021-05-25 at 4 03 46 PM" src="https://user-images.githubusercontent.com/75905911/119561139-d0af4180-bd72-11eb-8077-6420c49713f2.png">
+
+
+And images for our tables with data:
+<img width="926" alt="PHU_locations" src="https://user-images.githubusercontent.com/75905911/119559854-33074280-bd71-11eb-9329-b5cf19da85fb.png">
+
+<img width="1067" alt="phu" src="https://user-images.githubusercontent.com/75905911/119559821-2aaf0780-bd71-11eb-81a4-6d1cfcb17753.png">
+
+<img width="474" alt="phu_gender_final" src="https://user-images.githubusercontent.com/75905911/119559849-30a4e880-bd71-11eb-8b03-d13f02aeb44c.png">
+
+<img width="495" alt="phu_age_group_final" src="https://user-images.githubusercontent.com/75905911/119559835-2da9f800-bd71-11eb-96ea-424241034d8e.png">
+
+
+## pgAdmin Table Join
+We created 3 joined taables. All three tables were created with inner joins. The first, was a join of all four tables. The SQL code is here:
+<img width="577" alt="Screen Shot 2021-05-25 at 4 07 08 PM" src="https://user-images.githubusercontent.com/75905911/119561524-49ae9900-bd73-11eb-8d8c-41523a9e20ce.png">
+
+
+And an image of the table with the data can be seen here:
+<img width="1141" alt="phu_joined1" src="https://user-images.githubusercontent.com/75905911/119559938-50d4a780-bd71-11eb-9279-8930bb3c4b1a.png">
+<img width="1146" alt="phu_joined2" src="https://user-images.githubusercontent.com/75905911/119559952-53370180-bd71-11eb-93ee-719e319c66e4.png">
+
+
+The second table called "phu_by_age_and_outcome" was created by joining the phu_locations, phu and phu_age_group_final tables. The sql can be seen here:
+
+<img width="640" alt="phu_by_age_and_outcome" src="https://user-images.githubusercontent.com/75905911/119880776-9670ac00-befa-11eb-8920-9e36496aca8b.png">
+
+
+And an image of the table:
+<img width="1091" alt="phu_by_age_and_outcome" src="https://user-images.githubusercontent.com/75905911/119879902-b6ec3680-bef9-11eb-8f79-191951a1fe4e.png">
+
+
+The third table we created is called "phu_by_gender_and_outcome" was created by joining phu_locations, phu and phu_gender_final tables. The SQL for the new table is:
+
+<img width="577" alt="phu_by_gender_and_outcome" src="https://user-images.githubusercontent.com/75905911/119880078-e13df400-bef9-11eb-8de1-acae1db62c3e.png">
+
+
+And an image of the table:
+<img width="1073" alt="phu_by_gender_and_outcome" src="https://user-images.githubusercontent.com/75905911/119879939-c10e3500-bef9-11eb-8175-eafed7f30472.png">
+
+
+=======
+- Binned all PHU_IDs with less than 400 to keep the number of features at 10
+- Converted the categorial features to continues by using OneHotEncoder from SKlearn library
+- Merged the dataframes and dropped the categorial columns
+
+### Set the Target and features
+- Removed ' Not recivered' from outcome so we end up with two classes 'Fatal' and 'Recovered'
+- Set Fatal cases as our target(y)
+- Removed three columns ( fatal cases and resolved cases) from our dataframe to set up our features (X)
 
 ### Training and testing set:  
-Dates (broken into month and year), PHU (public health unit), location, number of Covid cases resolved and death cases per PHU.
+- Split our data into training and testing by train_test_split function from sklearn library
+- Scaled the data
+### RandomForest Classifier ML model:
+- Accuracy score 0.915 - The high accuracy is due to high recovery rate of covid.
 
-### Target: 
-Active cases.
-The model is going to predict PHUs with high active cases to help the government for allocating budgets. 
+### Confusion Matrix
+![confusion Matrix](Images/Confusion_matrix.png)
 
-### The reasons for choosing the ML model: 
-The model has high accuracy and is robust to outliers. There are also low correlations in features that requires multiple learning algorithms. 
+### Reasons for using RandomForest Classifier:
 
-![ML Flowchart](Pictures/ML_flowchart.png)
+- It reduces overfitting in decision trees that improves high accuracy
+- The model is robust to outliers.
+- It works well with both categorial and continues values.  
+- There are also low correlations in features that requires multiple learning algorithms.
+- It automates missing values in the data.
+ 
+
+
+### Limitations:
+
+- Training large number of deep trees costs higher in terms of computing and memory usage
+- More difficult to interpret comapares to individual decision trees 
+- It has poorperformance on imbalanced data  
+
+
+# Data Visualization using Tableau
+### Overview of Covid Cases
+The image below shows the total number of cases, number of cases based on age group, gender and status.
+![Overview of Covid Cases](https://user-images.githubusercontent.com/76136277/120117474-5a885180-c15b-11eb-80c2-7ffe892f8e8f.png)
+
+### Cases by Age Group and Public Health Unit 
+This image shows the number of cases by Public Health Unit ID vs Age group. 
+![Cases by Age Group_PHU ID](https://user-images.githubusercontent.com/76136277/120117532-ab984580-c15b-11eb-9409-5041b2cd4c5a.png)
+
+### Cases by Public Health Unit
+The image was created using tableau map. It shows the number of cases by public health unit. The larger the size, the larger the number of cases.
+![MAP](https://user-images.githubusercontent.com/76136277/120117926-b81d9d80-c15d-11eb-9996-4469401d308f.PNG)
 
 ## Google Presentation
 https://docs.google.com/presentation/d/1R-9hwFz2FQSbQqZFsBUwxTXCbG8xHMHgzqgI43Wb4a4/edit?usp=sharing
-
-
-
