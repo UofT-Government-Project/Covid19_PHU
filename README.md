@@ -171,23 +171,15 @@ Furthermore both training and testing data sets were then scaled to normalize th
 ### Model Results:
 
 After running the model, the accuracy score is 0.908.  The high accuracy score is due to the higher rate of recovered cases.  <br>
-Based on the Confusion Matrix below, the results identify the are a total of 209 
+Based on the Confusion Matrix below there are 3,152 Covid-19 cases used in the model.  The results identified:
+  - out of 194 total fatal cases - 29% of the cases were predicted true and 71% were predicted falsely
+  - out of 2,958 total resolved cases - 51% of the cases were predicted false and 49% were predicted correct.
 
 ![confusion Matrix](Images/Confusion_matrix.png)
 
-### Reasons for using RandomForest Classifier:
 
-This model type has a high accuracy score and is robust to outliers. There are also low correlations in features that requires multiple learning algorithms. 
-
-- It reduces overfitting in decision trees that improves high accuracy
-- The model is robust to outliers.
-- It works well with both categorial and continues values.  
-- There are also low correlations in features that requires multiple learning algorithms.
-- It automates missing values in the data.
- 
 ### Limitations:
 
-- Training large number of deep trees costs higher in terms of computing and memory usage
-- More difficult to interpret comapares to individual decision trees 
-- It has poorperformance on imbalanced data  
+Though the RFC model has many positive attributes, there are some limitations in the performance. <br>
+Training large number of deep trees can be expensive in terms of computing and memory usage required.  If the data was much more diverse, the model may not be able to interpret any comparision between individual decision trees.  The RFC model also cannot perform extensively with imbalanced data.
 
