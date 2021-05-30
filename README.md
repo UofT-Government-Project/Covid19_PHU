@@ -20,7 +20,7 @@ Phone numbers have been exchanged and a group chat set up on WhatsApp for ad hoc
 ***Blessing:***  Creating dashboard using a BI tool.
 
 # Research goal
-***How do we determine the eligibility to excute a vaccine roll-out program?***
+***How do we determine the eligibility to excute a vaccination roll-out program?***
 
 The goal of this analysis is to create a standard operating procedure (SOP) to determine a vaccine roll-out program.   The process stated here is to assist the Ministry of Health to identify, prioritize and execute vaccinations based on age group and or gender for future epidemics and pandemics.  <br>
 Data of current confirmed Covid-19 cases have been collected and used to create a machine learning model that can provide predictions and help understand the probability of higher cases within a specific attribute of demographics.  <br>
@@ -29,6 +29,7 @@ Below are the steps taken to provide results for this analysis.
 
 <br>
 **Data source:**<br>
+<br>
 
 [Ontario Data Catalogue](https://data.ontario.ca/dataset/confirmed-positive-cases-of-covid-19-in-ontario/resource/455fd63b-603d-4608-8216-7d8647f43350)
 
@@ -50,18 +51,19 @@ For the extract process, the sample dataset was pulled and read using Pandas in 
 ### Transform:
 
 The transformation process was required to clean data.  The primary aim of the transformation process is to transform the data into a consistent structure.<br>
-  - drop any columns deemed unnecessary to the analysis <br>
-  - drop any null values<br>
-  - renaming column names for efficiency<br>
-  - separating the case date column into week, month and year <br>
-  - filter for specific requirements to be used for each part of project. <br>
+  - Drop any columns deemed unnecessary to the analysis <br>
+  - Drop any null values<br>
+  - Renaming column names for efficiency<br>
+  - Separating the case date column into week, month and year <br>
+  - Filter for specific requirements to be used for each part of project. <br>
 
 
 ### Load:
 
-Finally, data will be loaded into a PostgreSQL database for easy distribution. SQL databases are often the targets of ETL processes, and because SQL is so ubiquitous, even databases that don't use SQL often have SQL-like interfaces.  The dataset will also be used for the project dashboard.
+Finally, data will be loaded into a PostgreSQL database for easy distribution. SQL databases are often the targets of ETL processes, and because SQL is so ubiquitous, even databases that don't use SQL often have SQL-like interfaces.  The dataset will also be used for the project dashboard. <br>
 <br>
 ![Image](https://github.com/UofT-Government-Project/Covid19_PHU/blob/faridah/ETL_Whole.PNG)
+<br>
 
 
 ## Database 
@@ -72,22 +74,24 @@ After the cleaning and preprocessing of the dataset, the [cleaned_dataset](https
 <img width="1338" alt="Covid19_PHU_ERD1" src="https://user-images.githubusercontent.com/75905911/119560169-95f8d980-bd71-11eb-9856-01d72383ade1.png">
 
 <img width="1304" alt="Covid19_PHU_ERD2" src="https://user-images.githubusercontent.com/75905911/119560180-98f3ca00-bd71-11eb-9926-755b8e07d208.png">
+<br>
 
 ### PostgreSQL Database:
 
-The cleaned data was imported into a SQL database, Postgres using pgAdmin.  Using queries, a table named "phu" was created to host the entire dataset.  Further queries and fitering the main table, additional tables was created as well which then was saved as csv files; [PHU_locations.csv](https://github.com/UofT-Government-Project/Covid19_PHU/blob/michelle/Covid19_Datasources/PHU_locations.csv), [phu_age_group_final.csv](https://github.com/UofT-Government-Project/Covid19_PHU/blob/michelle/Covid19_Datasources/phu_age_group_final.csv) and [phu_gender_final.csv](https://github.com/UofT-Government-Project/Covid19_PHU/blob/michelle/Covid19_Datasources/phu_gender_final.csv).  *[schema1.sql](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/schema1.sql) file shows the queries.*
+The cleaned data was imported into a SQL database, Postgres using pgAdmin.  Using queries, a table named "phu" was created to host the entire dataset.  Further queries and fitering the main table, additional tables were created as well and then saved as csv files; [PHU_locations.csv](https://github.com/UofT-Government-Project/Covid19_PHU/blob/michelle/Covid19_Datasources/PHU_locations.csv), [phu_age_group_final.csv](https://github.com/UofT-Government-Project/Covid19_PHU/blob/michelle/Covid19_Datasources/phu_age_group_final.csv) and [phu_gender_final.csv](https://github.com/UofT-Government-Project/Covid19_PHU/blob/michelle/Covid19_Datasources/phu_gender_final.csv).<br>
+*[schema1.sql](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/schema1.sql) file shows the queries.*
 
-Using the newly saved csv files, four more tables were created and their corresponding data imported with queries.  *[schema2.sql](https://github.com/UofT-Government-Project/Covid19_PHU/blob/Week_2/schema2.sql) file shows the additional queries.*
-
+Using the newly saved csv files, four more tables were created and their corresponding data imported with queries.<br>
+*[schema2.sql](https://github.com/UofT-Government-Project/Covid19_PHU/blob/Week_2/schema2.sql) file shows the additional queries.*
 <br>
 
-##### Tables from schema2.sql:
-1.  PHU_locations - details containing the name and ID associated for a specific PHU (Public Health Unit) along with the coordinates and physical address for all of 34 units.
-2.  PHU - details include the age groups, gender, outcome for each case and the week, month and year for each case associated with each PHU ID.  An index ID was included to create a primary key to call on during queries.
+#### Tables from schema2.sql:
+1.  PHU_locations - details containing the name and ID associated for a specific PHU (Public Health Unit) along with the coordinates and physical address for all of 34 units.<br>
+2.  PHU - details include the age groups, gender, outcome for each case and the week, month and year for each case associated with each PHU.  An index ID was included to create a primary key to call on during queries.
 3.  PHU_Gender_final - includes the gender and the count associated with each PHU ID.
 4.  PHU_Age_Group_Final - contains the age group per case associated with each PHU ID.
 
-<img width="926" alt="PHU_locations" src="https://user-images.githubusercontent.com/75905911/119559854-33074280-bd71-11eb-9329-b5cf19da85fb.png">
+
 
 <img width="1067" alt="phu" src="https://user-images.githubusercontent.com/75905911/119559821-2aaf0780-bd71-11eb-81a4-6d1cfcb17753.png">
 
