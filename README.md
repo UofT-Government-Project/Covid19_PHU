@@ -186,3 +186,16 @@ And an image of the table:
 - More difficult to interpret comapares to individual decision trees 
 - It has poorperformance on imbalanced data  
 
+
+# Data Visualization using Tableau
+### Overview of Covid Cases
+The image below shows the total number of cases, number of cases based on age group, gender and status.
+![Overview of Covid Cases](https://user-images.githubusercontent.com/76136277/120117474-5a885180-c15b-11eb-80c2-7ffe892f8e8f.png)
+
+### Cases by Age Group and Public Health Unit 
+This image shows the number of cases by Public Health Unit ID vs Age group. 
+![Cases by Age Group_PHU ID](https://user-images.githubusercontent.com/76136277/120117532-ab984580-c15b-11eb-9409-5041b2cd4c5a.png)
+
+### Cases by Public Health Unit
+The image was created using tableau map. It shows the number of cases by public health unit. The larger the size, the larger the number of cases.
+![MAP](https://user-images.githubusercontent.com/76136277/120117926-b81d9d80-c15d-11eb-9996-4469401d308f.PNG)
