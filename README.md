@@ -66,4 +66,10 @@ The model has high accuracy and is robust to outliers. There are also low correl
 
 ![ML Flowchart](Pictures/ML_flowchart.png)
 
+# Data Visualization using Tableau
+### Overview of Covid Cases
+The image below gives an overview of all cases based on age group, gender and status.
+![Overview of Covid Cases](https://user-images.githubusercontent.com/76136277/120117474-5a885180-c15b-11eb-80c2-7ffe892f8e8f.png)
+
+### Cases by Age Griup
 
