@@ -68,8 +68,11 @@ The model has high accuracy and is robust to outliers. There are also low correl
 
 # Data Visualization using Tableau
 ### Overview of Covid Cases
-The image below gives an overview of all cases based on age group, gender and status.
+The image below gives an the total number of cases, number of cases based on age group, gender and status.
 ![Overview of Covid Cases](https://user-images.githubusercontent.com/76136277/120117474-5a885180-c15b-11eb-80c2-7ffe892f8e8f.png)
 
-### Cases by Age Griup
+### Cases by Age Group and Public Health Unit 
+This images shows the number of cases by Public Health Unit ID vs Age group. 
+![Cases by Age Group_PHU ID](https://user-images.githubusercontent.com/76136277/120117532-ab984580-c15b-11eb-9409-5041b2cd4c5a.png)
+
 
