@@ -131,28 +131,28 @@ For a machine learning model, particular steps need to be followed to ensure a s
 ### The Machine learning model: 
 
 With the sample dataset, the machine learning model created is to predict a patient's probability of recovery from the Covid-19 virus based on the age group and gender.  <br>
-Ideally a dataset with patients' health history, ie; existing health conditions, would allow the model to predict to it's fullest extent.  After alot of research for the ideal dataset, it was difficult to find one that includes other factors of a patient's health, to provide continuous features which would provide a better prediction.  This information may not be available to the general public assuming it would be a privacy issue.<br>  However based on the current dataset being the most relatable to the analysis and model, the current data is limited to age group and gender.  Therefore the RandomForest classifier (RFC) from ML sklearn library has been selected for the machine learning model.  This model type has a high accuracy score and is robust to outliers. There are also low correlations in features that requires multiple learning algorithms. 
+Ideally a dataset with patients' health history, ie; existing health conditions, would allow the model to predict to it's fullest extent.  After alot of research for the ideal dataset, it was difficult to find one that includes other factors of a patient's health, to provide continuous features which would provide a better prediction.  This information may not be available to the general public assuming it would be a privacy issue.<br>  However based on the current dataset being the most relatable to the analysis and model, the current data is limited to age group and gender.  Therefore the RandomForest classifier (RFC) from ML sklearn library has been selected for the machine learning model.  
 
 ### Cleaning and Preprocessing:
 
 Similar to the ETL process, the dataset was required to be cleaned and preprocessed to avoid errors in the prediction.  The following steps were:
   - dropped unnecessary columns that have no impact on the predictation
   - renamed the column names
-  - segregated case date to week, month and year
-  - checked the categorial features
+  - converted 'Case Date' column to ordinal Day by using toordinal function
+  - checked the categorial features and generated variable list
   - checked the unique value counts for PHU_ID to see if binning is required
   - plotted the density of value count of PHU_ID to determine what values to replace.
 
  ![PHU Density](Images/PHU_density.png)
  
   - binned all PHU_IDs with less than 400 to keep the number of features at 10
-  - converted the categorial features to continues by using OneHotEncoder from SKlearn library
+  - converted the categorial features to continues by using OneHotEncoder from sklearn library
   - merged the dataframes and dropped the categorial column
 
 ### Set the Target and features:
 
-In order to focus the model's prediction to an outcome of "Recovered" or "Fatal, any rows with patients categorized as "Not Recovered" were taken out.  These records would mean the case is still active and therefore not valid for a prediction. <br>
-For the model, "Fatal" cases has been set as the target variable *(y)* and the remainder features set as *(X)* minus the "Fatal" and "Recovered" cases.
+In order to focus the model's prediction to an outcome of "Recovered" or "Fatal, any rows with patients categorized as "Not Recovered" were removed.  These records would mean the case is still active and therefore not valid for a prediction. <br>
+For the model, "Resolved" cases in the outcome column has been set as the target variable *(y)* and the remainder features set as *(X)* minus the outcome columns cases.
 
 ### Training and testing set:  
 
@@ -161,9 +161,17 @@ Furthermore both training and testing data sets were then scaled to normalize th
 
 ### RandomForest Classifier ML model:
 
-After running the model, the accuracy score was 0.915.  The high accuracy is due to high recovery rate of covid.
+***The reasons why this model was selected***
+  - because it reduces the chances of overfitting by using decision trees which improves high accuracy
+  - the model is robust to outliers
+  - it works well with both categorical and continous values
+  - the correlation between features are minimal and therefore reduces the number of multiple learning algorithms
+  - it automates missing values in the data
 
-### Confusion Matrix:
+### Model Results:
+
+After running the model, the accuracy score is 0.908.  The high accuracy score is due to the higher rate of recovered cases.  <br>
+Based on the Confusion Matrix below, the results identify the are a total of 209 
 
 ![confusion Matrix](Images/Confusion_matrix.png)
 
