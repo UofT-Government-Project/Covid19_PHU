@@ -191,7 +191,7 @@ Based on the Confusion Matrix below there are 3,152 Covid-19 cases used in the m
 
 ## Alternative Machine Learning Model
 
-An alternative model was created using another dataset, ![cases_by_status_and phu.csv](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Datasource/cases_by_status_and_phu.csv).  This dataset was used for creating an exploratory model to predict exponential quantities and measure the accuracy of the model.  <br>
+An alternative model was created using another dataset, [cases_by_status_and phu.csv](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Datasource/cases_by_status_and_phu.csv).  This dataset was used for creating an exploratory model to predict exponential quantities and measure the accuracy of the model.  <br>
 A Linear Regression was chosen due to the nature of the data. <br>
 <br>
 This dataset has 5 features; Date, PHU ID, Active cases, Resolved cases and Fatalities.  The active and fatal cases were accummulating data.  <br>
