@@ -89,16 +89,16 @@ Using the newly saved csv files, four more tables were created and their corresp
 **Tables from schema2.sql:**
 1.  PHU_locations - details containing the name and ID associated for a specific PHU (Public Health Unit) along with the coordinates and physical address for all of 34 units.<br>
 <br>
-![Location](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/PHU_locations.png?raw=true)<br>
+![Image](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/PHU_locations.png?raw=true)<br>
 
 2.  PHU - details include the age groups, gender, outcome for each case and the week, month and year for each case associated with each PHU.  An index ID was included to create a primary key to call on during queries. <br>
 <br> 
-![PHU](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/phu.png?raw=true)<br>
+![Image](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/phu.png?raw=true)<br>
 <br>
 3.  PHU_Gender_final - includes the gender and the count associated with each PHU ID. <br>
-![Gender](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/phu_gender_final.png?raw=true)<br>
+![Image](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/phu_gender_final.png?raw=true)<br>
 4.  PHU_Age_Group_Final - contains the age group per case associated with each PHU ID. <br>
-![Age_group](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/phu_age_group_final.png?raw=true)<br>
+![Image](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/phu_age_group_final.png?raw=true)<br>
 <br>
 
 ### Joins:
