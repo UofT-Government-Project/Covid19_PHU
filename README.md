@@ -189,27 +189,27 @@ Based on the Confusion Matrix below there are 3,152 Covid-19 cases used in the m
 ![confusion Matrix](Images/Confusion_matrix.png)
 <br>
 
+### Limitations:
+
+Though the RFC model has many positive attributes, there are some limitations in the performance. <br>
+Training large number of deep trees can be expensive in terms of computing and memory usage required.  If the data was much more diverse, the model may not be able to interpret any comparision between individual decision trees.  The RFC model also cannot perform extensively with imbalanced data.
+<br>
+<br>
 ## Alternative Machine Learning Model
 
-An alternative model was created using another dataset, [cases_by_status_and phu.csv](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Datasource/cases_by_status_and_phu.csv).  This dataset was used for creating an exploratory model to predict exponential quantities and measure the accuracy of the model.  <br>
-A Linear Regression was chosen due to the nature of the data. <br>
+An alternative model was created using another dataset, [cases_by_status_and phu.csv](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Datasource/cases_by_status_and_phu.csv).  This dataset was an exploratory model to predict exponential quantities and measure the accuracy of the model.  A Linear Regression was chosen due to the nature of the data. <br>
 <br>
-This dataset has 5 features; Date, PHU ID, Active cases, Resolved cases and Fatalities.  The active and fatal cases were accummulating data.  <br>
-The data was cleaned using same steps as previous model.  Since the data is an accummulating data, it was normalized by calculating the square root, taking the results and squaring the numbers.  The data can also be normalized by using logarithm and reversing it by power operator.<br>
+This dataset has 5 features; Date, PHU ID, Active cases, Resolved cases and Fatalities.  Data was cleaned using same steps as previous model.  Since the data is an accummulating data, it was normalized by calculating the square root, taking the results and squaring the numbers.  The data can also be normalized by using logarithm and reversing it by power operator.<br>
 We used the "Deaths" as the target *(y)* and the date as the feature *(X)*.  The active and resolved cases were removed as they would impact the results negatively and cause overfitting.  Again the data was split into training and testing sets. <br>
 <br>
 Since the data is based on each of the 34 Public Health Units, the model would need to run individually for each location.  Therefore for this purpose, the model was focused on the Toronto Public Health Unit.<br>
 <br>
 After running the model the R_squared score was strong at 0.96. <br>
+<br>
 ![Image](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/graph_LR.png?raw=true) <br>
 <br>
 This model can predict the number of deaths in the near future if no external factor impacts the data.   It can be used to forecast the implications when the Ministry of Health need to weigh in the ideas of lockdown and or restrictions.  It can also assist the original goal of this analysis - a plan to execute a vaccination roll-out program. 
-
-
-### Limitations:
-
-Though the RFC model has many positive attributes, there are some limitations in the performance. <br>
-Training large number of deep trees can be expensive in terms of computing and memory usage required.  If the data was much more diverse, the model may not be able to interpret any comparision between individual decision trees.  The RFC model also cannot perform extensively with imbalanced data.
+<br>
 <br>
 
 ## Exploratory Analysis
