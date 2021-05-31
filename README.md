@@ -187,18 +187,41 @@ Based on the Confusion Matrix below there are 3,152 Covid-19 cases used in the m
 Though the RFC model has many positive attributes, there are some limitations in the performance. <br>
 Training large number of deep trees can be expensive in terms of computing and memory usage required.  If the data was much more diverse, the model may not be able to interpret any comparision between individual decision trees.  The RFC model also cannot perform extensively with imbalanced data.
 
-# Data Visualization using Tableau
-### Overview of Covid Cases
+## Exploratory Analysis
+
+In exploring the data with further analysis on Python, the results can identify and isolate specific information.  Such as:
+  - Identifying the number of cases per age group.  Based on the pie chart below, the highest number of cases are within the 20 years of age at 14.7% and the lowest at 5.9% within the age of 70.<br>
+![Covid_cases_by age_group](https://github.com/UofT-Government-Project/Covid19_PHU/blob/michelle/Visualizations/Covid_19_cases_by_age_group.png?raw=true)
+<br>
+  - Number of cases per gender.  This chart reveals females have been more of the victim for contracting Covid-19, at 54.1% vs. males at 45.1%. <br>
+![Covid_cases_by gender](https://github.com/UofT-Government-Project/Covid19_PHU/blob/michelle/Visualizations/Covid_19_cases_by_gender.png?raw=true)
+<br>
+  - Cases by age and gender.  Below chart segregates the cases by gender and age.  Highest cases are females within the age of 40 and lowest are male in the ages of 90 +. <br>
+![Cases by age_gender](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/age_gender.png?raw=true)
+<br>
+  - Percentage of fatalities per gender reveals a higher rate for females at 6.41%, this would be obvious due to higher number of cases in females. <br>
+![Fatal_rates](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/fatal_by_gender.png?raw=true)
+<br>
+
+## Dashboard
+
+An interactive dashboard will be created in the following week.  The dashboard will provide option to select a specific Public Health Unit which will then provide details of location, number of cases for that specific unit and isolated case numbers based on gender and age.  This will be created using plotly on JavaScript and displayed via HTML. <br>
+<br>
+Tableau will be used as well to create a dashboard which will highlight further charts and or graphs similar to above exploratory analysis.  All dashboards will be compiled together to create a storyboard that can be shared with public and or used to present.  Below are some of the images of analysis using Tableau.
+<br>
+  1.  Overview of Covid Cases
 The image below shows the total number of cases, number of cases based on age group, gender and status.
 ![Overview of Covid Cases](https://user-images.githubusercontent.com/76136277/120117474-5a885180-c15b-11eb-80c2-7ffe892f8e8f.png)
 
-### Cases by Age Group and Public Health Unit 
+  2.  Cases by Age Group and Public Health Unit 
 This image shows the number of cases by Public Health Unit ID vs Age group. 
 ![Cases by Age Group_PHU ID](https://user-images.githubusercontent.com/76136277/120117532-ab984580-c15b-11eb-9409-5041b2cd4c5a.png)
 
-### Cases by Public Health Unit
+  3.  Cases by Public Health Unit
 The image was created using tableau map. It shows the number of cases by public health unit. The larger the size, the larger the number of cases.
 ![MAP](https://user-images.githubusercontent.com/76136277/120117926-b81d9d80-c15d-11eb-9996-4469401d308f.PNG)
 
-## Google Presentation
-https://docs.google.com/presentation/d/1R-9hwFz2FQSbQqZFsBUwxTXCbG8xHMHgzqgI43Wb4a4/edit?usp=sharing
+## Presentation
+
+A final presentation will be created that includes snapshots of the entire project that will be used as introduction.  
+*This [Google_presentation](https://docs.google.com/presentation/d/1R-9hwFz2FQSbQqZFsBUwxTXCbG8xHMHgzqgI43Wb4a4/edit?usp=sharing) is a work in progress.*
