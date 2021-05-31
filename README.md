@@ -92,13 +92,15 @@ Using the newly saved csv files, four more tables were created and their corresp
 <br>
 
 2.  PHU - details include the age groups, gender, outcome for each case and the week, month and year for each case associated with each PHU.  An index ID was included to create a primary key to call on during queries. <br>
-<br> 
-![Image](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/phu.png?raw=true)<br>
+<img width="500" alt="phu" src="https://user-images.githubusercontent.com/75437852/120135832-1028c400-c19f-11eb-9aed-1d3ba632a24f.png">
 <br>
+
 3.  PHU_Gender_final - includes the gender and the count associated with each PHU ID. <br>
-![Image](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/phu_gender_final.png?raw=true)<br>
+<img width="500" alt="phu_gender_final" src="https://user-images.githubusercontent.com/75437852/120135883-2fbfec80-c19f-11eb-9814-73bd7f57ce16.png">
+<br>
+
 4.  PHU_Age_Group_Final - contains the age group per case associated with each PHU ID. <br>
-![Image](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/phu_age_group_final.png?raw=true)<br>
+<img width="500" alt="phu_age_group_final" src="https://user-images.githubusercontent.com/75437852/120135903-3c444500-c19f-11eb-9778-c5bfddbdbe0e.png">
 <br>
 
 ### Joins:
