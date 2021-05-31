@@ -42,7 +42,7 @@ Each team member has used the ETL process and saved work under their respective 
 
 The general process that we will be following is as shown below:
 
-![Image](https://github.com/UofT-Government-Project/Covid19_PHU/blob/faridah/ETL%20Process.PNG)
+![Image](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/ETL%20Process.PNG?raw=true)
 
 ### Extract:
 
@@ -62,7 +62,7 @@ The transformation process was required to clean data.  The primary aim of the t
 
 Finally, data will be loaded into a PostgreSQL database for easy distribution. SQL databases are often the targets of ETL processes, and because SQL is so ubiquitous, even databases that don't use SQL often have SQL-like interfaces.  The dataset will also be used for the project dashboard. <br>
 <br>
-![Image](https://github.com/UofT-Government-Project/Covid19_PHU/blob/faridah/ETL_Whole.PNG)
+![Image](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/ETL_Whole.PNG?raw=true)
 <br>
 
 
@@ -71,9 +71,8 @@ After the cleaning and preprocessing of the dataset, the [cleaned_dataset](https
 
 ### ERD:
 
-<img width="1338" alt="Covid19_PHU_ERD1" src="https://user-images.githubusercontent.com/75905911/119560169-95f8d980-bd71-11eb-9856-01d72383ade1.png">
-
-<img width="1304" alt="Covid19_PHU_ERD2" src="https://user-images.githubusercontent.com/75905911/119560180-98f3ca00-bd71-11eb-9926-755b8e07d208.png">
+[!ERD](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/ERD%20FINAL2/Covid19_PHU_ERD1.png?raw=true)<br>
+[!ERD](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/ERD%20FINAL2/Covid19_PHU_ERD2.png?raw=true)<br>
 <br>
 
 ### PostgreSQL Database:
@@ -82,23 +81,23 @@ The cleaned data was imported into a SQL database, Postgres using pgAdmin.  Usin
 *[schema1.sql](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/schema1.sql) file shows the queries.*
 
 Using the newly saved csv files, four more tables were created and their corresponding data imported with queries.<br>
+<br>
 *[schema2.sql](https://github.com/UofT-Government-Project/Covid19_PHU/blob/Week_2/schema2.sql) file shows the additional queries.*
 <br>
 
-#### Tables from schema2.sql:
+**Tables from schema2.sql:**
 1.  PHU_locations - details containing the name and ID associated for a specific PHU (Public Health Unit) along with the coordinates and physical address for all of 34 units.<br>
-2.  PHU - details include the age groups, gender, outcome for each case and the week, month and year for each case associated with each PHU.  An index ID was included to create a primary key to call on during queries.
-3.  PHU_Gender_final - includes the gender and the count associated with each PHU ID.
-4.  PHU_Age_Group_Final - contains the age group per case associated with each PHU ID.
-
-
-
-<img width="1067" alt="phu" src="https://user-images.githubusercontent.com/75905911/119559821-2aaf0780-bd71-11eb-81a4-6d1cfcb17753.png">
-
-<img width="474" alt="phu_gender_final" src="https://user-images.githubusercontent.com/75905911/119559849-30a4e880-bd71-11eb-8b03-d13f02aeb44c.png">
-
-<img width="495" alt="phu_age_group_final" src="https://user-images.githubusercontent.com/75905911/119559835-2da9f800-bd71-11eb-96ea-424241034d8e.png">
-
+<br>
+![Location](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/PHU_locations.png?raw=true)<br>
+2.  PHU - details include the age groups, gender, outcome for each case and the week, month and year for each case associated with each PHU.  An index ID was included to create a primary key to call on during queries. <br>
+<br> 
+![PHU](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/phu.png?raw=true)<br>
+<br>
+3.  PHU_Gender_final - includes the gender and the count associated with each PHU ID. <br>
+![Gender](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/phu_gender_final.png?raw=true)<br>
+4.  PHU_Age_Group_Final - contains the age group per case associated with each PHU ID. <br>
+![Age_group](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/phu_age_group_final.png?raw=true)<br>
+<br>
 ### Joins:
 
 Two more tables were created by joining tables using the inner join method:
@@ -130,6 +129,7 @@ A database instance was created on AWS' RDS (relational database) and four bucke
 ## Machine Learning
 
 For a machine learning model, particular steps need to be followed to ensure a successful model. <br>
+<br>
 ![ML Flowchart](https://github.com/UofT-Government-Project/Covid19_PHU/blob/Week_1/Images/ML_flowchart.png?raw=true)  
 
 ### The Machine learning model: 
