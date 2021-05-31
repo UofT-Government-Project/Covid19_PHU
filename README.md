@@ -90,6 +90,7 @@ Using the newly saved csv files, four more tables were created and their corresp
 1.  PHU_locations - details containing the name and ID associated for a specific PHU (Public Health Unit) along with the coordinates and physical address for all of 34 units.<br>
 <br>
 ![Location](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/PHU_locations.png?raw=true)<br>
+
 2.  PHU - details include the age groups, gender, outcome for each case and the week, month and year for each case associated with each PHU.  An index ID was included to create a primary key to call on during queries. <br>
 <br> 
 ![PHU](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/phu.png?raw=true)<br>
