@@ -71,8 +71,8 @@ After the cleaning and preprocessing of the dataset, the [cleaned_dataset](https
 
 ### ERD:
 
-[!ERD](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/ERD%20FINAL2/Covid19_PHU_ERD1.png?raw=true)<br>
-[!ERD](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/ERD%20FINAL2/Covid19_PHU_ERD2.png?raw=true)<br>
+![ERD](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/ERD%20FINAL2/Covid19_PHU_ERD1.png?raw=true)<br>
+![ERD](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/ERD%20FINAL2/Covid19_PHU_ERD2.png?raw=true)<br>
 <br>
 
 ### PostgreSQL Database:
