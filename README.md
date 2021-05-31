@@ -5,7 +5,7 @@
 # Covid-19 and Public Health Units in Ontario
 
 ## Overview
-This project is to showcase the strategical thinking and group efforts to predict and analyze the Covid-19 data. It is to recognize the trends of the highs and lows of Covid 19 cases at each of the 34 Public Health Unit in Ontario, Canada.<br>
+This project is to showcase the strategical thinking and group efforts to predict and analyze the Covid-19 data. It is to recognize the trends of the highs and lows of Covid 19 cases at each of the 34 Public Health Units in Ontario, Canada.<br>
 <br>
 ## Communication protocol
 A group chat has been set up in Slack.  This will be the primary platform for ongoing correspondence by each team member while working on our individual roles for each segment.  Every Monday and Wednesday evenings will be an opportunity to meet via zoom and discussing the current week's agenda.  Every Sunday the team will connect via Google Meet as well to finalize the submission of the current week.  Additional meetings will be set up throughout the week when needed.<br>
@@ -42,7 +42,7 @@ Each team member has used the ETL process and saved work under their respective 
 
 The general process that we will be following is as shown below:
 
-![Image](https://github.com/UofT-Government-Project/Covid19_PHU/blob/faridah/ETL%20Process.PNG)
+![Image](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/ETL%20Process.PNG?raw=true)
 
 ### Extract:
 
@@ -62,7 +62,7 @@ The transformation process was required to clean data.  The primary aim of the t
 
 Finally, data will be loaded into a PostgreSQL database for easy distribution. SQL databases are often the targets of ETL processes, and because SQL is so ubiquitous, even databases that don't use SQL often have SQL-like interfaces.  The dataset will also be used for the project dashboard. <br>
 <br>
-![Image](https://github.com/UofT-Government-Project/Covid19_PHU/blob/faridah/ETL_Whole.PNG)
+![Image](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/ETL_Whole.PNG?raw=true)
 <br>
 
 
@@ -71,9 +71,8 @@ After the cleaning and preprocessing of the dataset, the [cleaned_dataset](https
 
 ### ERD:
 
-<img width="1338" alt="Covid19_PHU_ERD1" src="https://user-images.githubusercontent.com/75905911/119560169-95f8d980-bd71-11eb-9856-01d72383ade1.png">
-
-<img width="1304" alt="Covid19_PHU_ERD2" src="https://user-images.githubusercontent.com/75905911/119560180-98f3ca00-bd71-11eb-9926-755b8e07d208.png">
+[!ERD](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/ERD%20FINAL2/Covid19_PHU_ERD1.png?raw=true)<br>
+[!ERD](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/ERD%20FINAL2/Covid19_PHU_ERD2.png?raw=true)<br>
 <br>
 
 ### PostgreSQL Database:
@@ -82,23 +81,23 @@ The cleaned data was imported into a SQL database, Postgres using pgAdmin.  Usin
 *[schema1.sql](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/schema1.sql) file shows the queries.*
 
 Using the newly saved csv files, four more tables were created and their corresponding data imported with queries.<br>
+<br>
 *[schema2.sql](https://github.com/UofT-Government-Project/Covid19_PHU/blob/Week_2/schema2.sql) file shows the additional queries.*
 <br>
 
-#### Tables from schema2.sql:
+**Tables from schema2.sql:**
 1.  PHU_locations - details containing the name and ID associated for a specific PHU (Public Health Unit) along with the coordinates and physical address for all of 34 units.<br>
-2.  PHU - details include the age groups, gender, outcome for each case and the week, month and year for each case associated with each PHU.  An index ID was included to create a primary key to call on during queries.
-3.  PHU_Gender_final - includes the gender and the count associated with each PHU ID.
-4.  PHU_Age_Group_Final - contains the age group per case associated with each PHU ID.
-
-
-
-<img width="1067" alt="phu" src="https://user-images.githubusercontent.com/75905911/119559821-2aaf0780-bd71-11eb-81a4-6d1cfcb17753.png">
-
-<img width="474" alt="phu_gender_final" src="https://user-images.githubusercontent.com/75905911/119559849-30a4e880-bd71-11eb-8b03-d13f02aeb44c.png">
-
-<img width="495" alt="phu_age_group_final" src="https://user-images.githubusercontent.com/75905911/119559835-2da9f800-bd71-11eb-96ea-424241034d8e.png">
-
+<br>
+![Location](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/PHU_locations.png?raw=true)<br>
+2.  PHU - details include the age groups, gender, outcome for each case and the week, month and year for each case associated with each PHU.  An index ID was included to create a primary key to call on during queries. <br>
+<br> 
+![PHU](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/phu.png?raw=true)<br>
+<br>
+3.  PHU_Gender_final - includes the gender and the count associated with each PHU ID. <br>
+![Gender](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/phu_gender_final.png?raw=true)<br>
+4.  PHU_Age_Group_Final - contains the age group per case associated with each PHU ID. <br>
+![Age_group](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/phu_age_group_final.png?raw=true)<br>
+<br>
 ### Joins:
 
 Two more tables were created by joining tables using the inner join method:
@@ -130,6 +129,7 @@ A database instance was created on AWS' RDS (relational database) and four bucke
 ## Machine Learning
 
 For a machine learning model, particular steps need to be followed to ensure a successful model. <br>
+<br>
 ![ML Flowchart](https://github.com/UofT-Government-Project/Covid19_PHU/blob/Week_1/Images/ML_flowchart.png?raw=true)  
 
 ### The Machine learning model: 
@@ -187,18 +187,41 @@ Based on the Confusion Matrix below there are 3,152 Covid-19 cases used in the m
 Though the RFC model has many positive attributes, there are some limitations in the performance. <br>
 Training large number of deep trees can be expensive in terms of computing and memory usage required.  If the data was much more diverse, the model may not be able to interpret any comparision between individual decision trees.  The RFC model also cannot perform extensively with imbalanced data.
 
-# Data Visualization using Tableau
-### Overview of Covid Cases
+## Exploratory Analysis
+
+In exploring the data with further analysis on Python, the results can identify and isolate specific information.  Such as:
+  - Identifying the number of cases per age group.  Based on the pie chart below, the highest number of cases are within the 20 years of age at 14.7% and the lowest at 5.9% within the age of 70.<br>
+![Covid_cases_by age_group](https://github.com/UofT-Government-Project/Covid19_PHU/blob/michelle/Visualizations/Covid_19_cases_by_age_group.png?raw=true)
+<br>
+  - Number of cases per gender.  This chart reveals females have been more of the victim for contracting Covid-19, at 54.1% vs. males at 45.1%. <br>
+![Covid_cases_by gender](https://github.com/UofT-Government-Project/Covid19_PHU/blob/michelle/Visualizations/Covid_19_cases_by_gender.png?raw=true)
+<br>
+  - Cases by age and gender.  Below chart segregates the cases by gender and age.  Highest cases are females within the age of 40 and lowest are male in the ages of 90 +. <br>
+![Cases by age_gender](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/age_gender.png?raw=true)
+<br>
+  - Percentage of fatalities per gender reveals a higher rate for females at 6.41%, this would be obvious due to higher number of cases in females. <br>
+![Fatal_rates](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/fatal_by_gender.png?raw=true)
+<br>
+
+## Dashboard
+
+An interactive dashboard will be created in the following week.  The dashboard will provide option to select a specific Public Health Unit which will then provide details of location, number of cases for that specific unit and isolated case numbers based on gender and age.  This will be created using plotly on JavaScript and displayed via HTML. <br>
+<br>
+Tableau will be used as well to create a dashboard which will highlight further charts and or graphs similar to above exploratory analysis.  All dashboards will be compiled together to create a storyboard that can be shared with public and or used to present.  Below are some of the images of analysis using Tableau.
+<br>
+  1.  Overview of Covid Cases
 The image below shows the total number of cases, number of cases based on age group, gender and status.
 ![Overview of Covid Cases](https://user-images.githubusercontent.com/76136277/120117474-5a885180-c15b-11eb-80c2-7ffe892f8e8f.png)
 
-### Cases by Age Group and Public Health Unit 
+  2.  Cases by Age Group and Public Health Unit 
 This image shows the number of cases by Public Health Unit ID vs Age group. 
 ![Cases by Age Group_PHU ID](https://user-images.githubusercontent.com/76136277/120117532-ab984580-c15b-11eb-9409-5041b2cd4c5a.png)
 
-### Cases by Public Health Unit
+  3.  Cases by Public Health Unit
 The image was created using tableau map. It shows the number of cases by public health unit. The larger the size, the larger the number of cases.
 ![MAP](https://user-images.githubusercontent.com/76136277/120117926-b81d9d80-c15d-11eb-9996-4469401d308f.PNG)
 
-## Google Presentation
-https://docs.google.com/presentation/d/1R-9hwFz2FQSbQqZFsBUwxTXCbG8xHMHgzqgI43Wb4a4/edit?usp=sharing
+## Presentation
+
+A final presentation will be created that includes snapshots of the entire project that will be used as introduction.  
+*This [Google_presentation](https://docs.google.com/presentation/d/1R-9hwFz2FQSbQqZFsBUwxTXCbG8xHMHgzqgI43Wb4a4/edit?usp=sharing) is a work in progress.*
