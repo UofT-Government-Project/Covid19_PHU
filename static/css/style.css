@@ -1,18 +1,17 @@
 body {
-    background-color: #6666CC;
+    /* background-color: #6666CC; */ 
 }
 
 .jumbotron {
-    background-image: url("../images/jumbotron_pic1.jpg");
-    background-size: 100% 100%;
+    /* background-size: 100% 100%; */
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: larger;
 }
 
 .well {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: small;
-    background-color: lightgrey;
+    font-size: medium;
+    background-color: #6666ff;
     border-color: black;
 }
 
@@ -22,3 +21,4 @@ body {
     background-color: lightgrey;
     border-color: black;
 }
+

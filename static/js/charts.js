@@ -67,23 +67,16 @@ function init() {
       // Creating variable to hold each attribute for each PHU
       var ageGroup = [statResult.Age_Under_20,statResult.Age_20s, statResult.Age_30s, statResult.Age_40s, statResult.Age_50s, 
         statResult.Age_60s, statResult.Age_70s, statResult.Age_80s, statResult.Age_Over_90s]
-      var ageNames = ['Ages under 20', 'Age Group of 20s', 'Age Group of 30s', 'Age Group of 40s','Age Group of 50s',
-      'Age Group of 60s','Age Group of 70s','Age Group of 80s','Ages over 90']
+      var ageNames = ['Ages < 20', 'Age Group of 20s', 'Age Group of 30s', 'Age Group of 40s','Age Group of 50s',
+      'Age Group of 60s','Age Group of 70s','Age Group of 80s','Ages 90 +']
 
-      var genderGroup = [statResult.Female, statResult.Male,statResult.Gender_Diverse,statResult.Unspecified] 
-      var genderNames = ['Female','Male','Gender Diverse','Unspecified']
+      
+      var genderGroup = [statResult.Female,statResult.Male,statResult.Unknown] 
+      var genderNames = ['Female','Male','Unknown']
       
       var status = [statResult.Not_Resolved, statResult.Resolved, statResult.Fatal]
       var statusNames = ['Not Resolved','Resolved','Fatal']
-
-      var year = [statResult.Cases_in_2020, statResult.Cases_in_2021]
-
-      var totalstr = ['Total Cases:']
-      var total = [statResult.Total_Cases]
-      var totaltext = [totalstr,total]
-      
-      var statNames = [ageNames, genderNames, statusNames]
-     
+    
     
       // Creating bar chart of age groups 
       var barData = [{
@@ -92,19 +85,25 @@ function init() {
         text: genderNames,
         type: "bar", 
         orientation: "h",
-        marker: {color: "rgb(255, 102, 102)"}
+        width: 0.5,
+        marker: {
+          color: ['#ff0000',"#0000ff", '#ffff00']
+        }
       }];
  
       // Creating the layout for the bar chart. 
       var barLayout = {
         title: {
-          text: "<b>Cases by Age Group</b>",
+          text: "<b>Cases by Gender</b>",
           font: {size: 22}
         },
-        width: 1150,
+        xaxis: {
+          title: 'Number of Cases'
+        },
+        automargin: true,
+        width: 1000,
         height: 500,
-        paper_bgcolor: "lightgrey",
-        plot_bgcolor: "lightgrey"
+        
       };
   
       var config = {responsive: true}
@@ -119,19 +118,21 @@ function init() {
          mode: "markers",
          marker: {
            size: ageGroup,
-           color: ageGroup
+           color: ageGroup,
+           colorscale: 'Jet'
          }
        }];
 
       // Creating bubble chart layout
       var bubbleLayout = {
         title: {
-          text: '<b>Cases by Gender</b>',
+          text: '<b>Cases by Age Group</b>',
           font: {size: 22}
         },
         xaxis: {
-          title: "Gender"},
+          title: "Number of Cases"},
           hovermode: 'closest',
+          automargin: true,
           width: 1150,
           height: 500,
         };
@@ -150,14 +151,12 @@ function init() {
 
       var pieLayout = {
         title: {
-          text: "<b>Case Status per PHU</b>", 
+          text: "<b>% of Outcomes per PHU</b>", 
           font: {size: 22}
         },
         hovermode: "closest",
         width: 1150,
-        height: 500,
-        paper_bgcolor: "#b3b3b3",
-        plot_bgcolor: "#b3b3b3"
+        height: 700
       };
       
       Plotly.newPlot('pie',pie, pieLayout);
