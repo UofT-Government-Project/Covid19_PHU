@@ -5,7 +5,7 @@
 # Covid-19 and Public Health Units in Ontario
 
 ## Overview
-This project is to showcase the strategical thinking and group efforts to predict and analyze the Covid-19 data. It is to recognize the trends of the highs and lows of Covid 19 cases at each of the 34 Public Health Units in Ontario, Canada.<br>
+This project is to showcase the strategical thinking and group efforts to predict and analyze the Covid-19 data. It is to recognize the trends of the highs and lows of Covid 19 cases at each of the 34 Public Health Unit in Ontario, Canada.<br>
 <br>
 ## Communication protocol
 A group chat has been set up in Slack.  This will be the primary platform for ongoing correspondence by each team member while working on our individual roles for each segment.  Every Monday and Wednesday evenings will be an opportunity to meet via zoom and discussing the current week's agenda.  Every Sunday the team will connect via Google Meet as well to finalize the submission of the current week.  Additional meetings will be set up throughout the week when needed.<br>
@@ -43,7 +43,7 @@ Each team member has used the ETL process and saved work under their respective 
 
 The general process that we will be following is as shown below:
 
-![Image](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/ETL%20Process.PNG?raw=true)
+![Image](https://github.com/UofT-Government-Project/Covid19_PHU/blob/faridah/ETL%20Process.PNG)
 
 ### Extract:
 
@@ -63,7 +63,7 @@ The transformation process was required to clean data.  The primary aim of the t
 
 Finally, data will be loaded into a PostgreSQL database for easy distribution. SQL databases are often the targets of ETL processes, and because SQL is so ubiquitous, even databases that don't use SQL often have SQL-like interfaces.  The dataset will also be used for the project dashboard. <br>
 <br>
-![Image](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/ETL_Whole.PNG?raw=true)
+![Image](https://github.com/UofT-Government-Project/Covid19_PHU/blob/faridah/ETL_Whole.PNG)
 <br>
 <br>
 
@@ -72,37 +72,33 @@ After the cleaning and preprocessing of the dataset, the [cleaned_dataset](https
 
 ### ERD:
 
-![ERD](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/ERD%20FINAL2/Covid19_PHU_ERD1.png?raw=true)<br>
-![ERD](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/ERD%20FINAL2/Covid19_PHU_ERD2.png?raw=true)<br>
+<img width="1338" alt="Covid19_PHU_ERD1" src="https://user-images.githubusercontent.com/75905911/119560169-95f8d980-bd71-11eb-9856-01d72383ade1.png">
+
+<img width="1304" alt="Covid19_PHU_ERD2" src="https://user-images.githubusercontent.com/75905911/119560180-98f3ca00-bd71-11eb-9926-755b8e07d208.png">
 <br>
 
 ### PostgreSQL Database:
 
 The cleaned data was imported into a SQL database, Postgres using pgAdmin.  Using queries, a table named "phu" was created to host the entire dataset.  Further queries and fitering the main table, additional tables were created as well and then saved as csv files; [PHU_locations.csv](https://github.com/UofT-Government-Project/Covid19_PHU/blob/michelle/Covid19_Datasources/PHU_locations.csv), [phu_age_group_final.csv](https://github.com/UofT-Government-Project/Covid19_PHU/blob/michelle/Covid19_Datasources/phu_age_group_final.csv) and [phu_gender_final.csv](https://github.com/UofT-Government-Project/Covid19_PHU/blob/michelle/Covid19_Datasources/phu_gender_final.csv).<br>
-<br>
 *[schema1.sql](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/schema1.sql) file shows the queries.*
 
 Using the newly saved csv files, four more tables were created and their corresponding data imported with queries.<br>
-<br>
 *[schema2.sql](https://github.com/UofT-Government-Project/Covid19_PHU/blob/Week_2/schema2.sql) file shows the additional queries.*
 <br>
 
-**Tables from schema2.sql:**
+#### Tables from schema2.sql:
 1.  PHU_locations - details containing the name and ID associated for a specific PHU (Public Health Unit) along with the coordinates and physical address for all of 34 units.<br>
-<img width="500" alt="PHU_locations" src="https://user-images.githubusercontent.com/75437852/120135749-eb345100-c19e-11eb-9bb1-5ccab42a1426.png">
-<br>
+2.  PHU - details include the age groups, gender, outcome for each case and the week, month and year for each case associated with each PHU.  An index ID was included to create a primary key to call on during queries.
+3.  PHU_Gender_final - includes the gender and the count associated with each PHU ID.
+4.  PHU_Age_Group_Final - contains the age group per case associated with each PHU ID.
 
-2.  PHU - details include the age groups, gender, outcome for each case and the week, month and year for each case associated with each PHU.  An index ID was included to create a primary key to call on during queries. <br>
-<img width="500" alt="phu" src="https://user-images.githubusercontent.com/75437852/120135832-1028c400-c19f-11eb-9aed-1d3ba632a24f.png">
-<br>
 
-3.  PHU_Gender_final - includes the gender and the count associated with each PHU ID. <br>
-<img width="500" alt="phu_gender_final" src="https://user-images.githubusercontent.com/75437852/120135883-2fbfec80-c19f-11eb-9814-73bd7f57ce16.png">
-<br>
 
-4.  PHU_Age_Group_Final - contains the age group per case associated with each PHU ID. <br>
-<img width="500" alt="phu_age_group_final" src="https://user-images.githubusercontent.com/75437852/120135903-3c444500-c19f-11eb-9778-c5bfddbdbe0e.png">
-<br>
+<img width="1067" alt="phu" src="https://user-images.githubusercontent.com/75905911/119559821-2aaf0780-bd71-11eb-81a4-6d1cfcb17753.png">
+
+<img width="474" alt="phu_gender_final" src="https://user-images.githubusercontent.com/75905911/119559849-30a4e880-bd71-11eb-8b03-d13f02aeb44c.png">
+
+<img width="495" alt="phu_age_group_final" src="https://user-images.githubusercontent.com/75905911/119559835-2da9f800-bd71-11eb-96ea-424241034d8e.png">
 
 ### Joins:
 
@@ -136,7 +132,6 @@ A database instance was created on AWS' RDS (relational database) and four bucke
 ## Machine Learning
 
 For a machine learning model, particular steps need to be followed to ensure a successful model. <br>
-<br>
 ![ML Flowchart](https://github.com/UofT-Government-Project/Covid19_PHU/blob/Week_1/Images/ML_flowchart.png?raw=true)  
 
 ### The Machine learning model: 
@@ -233,32 +228,40 @@ In exploring the data with further analysis on Python, the results can identify 
 ![Fatal_rates](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/fatal_by_gender.png?raw=true)
 <br>
 <br>
+ 
+ # Data Visualization using Tableau
+ 
+ 1.  Overview of Covid Cases
+
+The image below shows the total number of cases, number of cases based on age group, gender and status.
+![Ontario Public Health Unit Covid Statistics (3)](https://user-images.githubusercontent.com/76136277/120877196-265dc800-c583-11eb-9925-1779e0df8bd2.png)
+
+### Cases by Age Group and Public Health Unit 
+This image shows the number of cases by Public Health Unit ID vs Age group. 
+![Ontario Public Health Unit Covid Statistics (4)](https://user-images.githubusercontent.com/76136277/120877269-9c622f00-c583-11eb-98bd-ede0352f18e3.png)
+
+### Cases by Public Health Unit
+The image was created using tableau map. It shows the number of cases by public health unit. The larger the size, the larger the number of cases. The second image also shows gender by age PHU.
+![Ontario Public Health Unit Covid Statistics](https://user-images.githubusercontent.com/76136277/120877233-6a50cd00-c583-11eb-8d64-1f9dd6161459.png)
+
+### Overview of Cases by Status
+The image below represents covid status, that is, number of fatal, resolved and not resolved cases by age group, gender and PHU.
+![Ontario Public Health Unit Covid Statistics (1)](https://user-images.githubusercontent.com/76136277/120877171-f8788380-c582-11eb-8183-29a493b04c37.png)
+
+### covid Cases by Year/Month
+In this image, we can see cases by age group and gender from January to Decemeber. The thicker the colour the more the number of cases. Also, the line graph shows yearly cases by gender. We can conclude that there were more cases in year 2020 than in year 2021. Lastly, females have the highest number of covid cases.
+![Ontario Public Health Unit Covid Statistics (2)](https://user-images.githubusercontent.com/76136277/120877460-a6386200-c584-11eb-9903-d05a3dce2195.png)
+
 ## Dashboard
 
 An interactive dashboard will be created in the following week.  The dashboard will provide option to select a specific Public Health Unit which will then provide details of location, number of cases for that specific unit and isolated case numbers based on gender and age.  This will be created using plotly on JavaScript and displayed via HTML. <br>
 <br>
 Tableau will be used as well to create a dashboard which will highlight further charts and or graphs similar to above exploratory analysis.  All dashboards will be compiled together to create a storyboard that can be shared with public and or used to present.  Below are some of the images of analysis using Tableau.
 <br>
-  1.  Overview of Covid Cases
-The image below shows the total number of cases, number of cases based on age group, gender and status.
-<br>
-
-![Overview of Covid Cases](https://user-images.githubusercontent.com/76136277/120117474-5a885180-c15b-11eb-80c2-7ffe892f8e8f.png)
-
-  2.  Cases by Age Group and Public Health Unit 
-This image shows the number of cases by Public Health Unit ID vs Age group. 
-<br>
-
-![Cases by Age Group_PHU ID](https://user-images.githubusercontent.com/76136277/120117532-ab984580-c15b-11eb-9409-5041b2cd4c5a.png)
-
-  3.  Cases by Public Health Unit
-The image was created using tableau map. It shows the number of cases by public health unit. The larger the size, the larger the number of cases.
-<br>
-
 ![MAP](https://user-images.githubusercontent.com/76136277/120117926-b81d9d80-c15d-11eb-9996-4469401d308f.PNG)
 <br>
 
-## Presentation
 
-A final presentation will be created that includes snapshots of the entire project that will be used as introduction.  
-*This [Google_presentation](https://docs.google.com/presentation/d/1R-9hwFz2FQSbQqZFsBUwxTXCbG8xHMHgzqgI43Wb4a4/edit?usp=sharing) is a work in progress.*
+## Google Presentation
+https://docs.google.com/presentation/d/1R-9hwFz2FQSbQqZFsBUwxTXCbG8xHMHgzqgI43Wb4a4/edit?usp=sharing
+
