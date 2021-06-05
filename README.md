@@ -199,3 +199,7 @@ This image shows the number of cases by Public Health Unit ID vs Age group.
 ### Cases by Public Health Unit
 The image was created using tableau map. It shows the number of cases by public health unit. The larger the size, the larger the number of cases.
 ![MAP](https://user-images.githubusercontent.com/76136277/120117926-b81d9d80-c15d-11eb-9996-4469401d308f.PNG)
+
+### Overview of Cases by Status
+The image below represents covid status, that is, number of fatal, resolved and not resolved cases by age group, gender and PHU.
+![Ontario Public Health Unit Covid Statistics (1)](https://user-images.githubusercontent.com/76136277/120877171-f8788380-c582-11eb-8183-29a493b04c37.png)
