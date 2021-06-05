@@ -205,5 +205,5 @@ The image below represents covid status, that is, number of fatal, resolved and 
 ![Ontario Public Health Unit Covid Statistics (1)](https://user-images.githubusercontent.com/76136277/120877171-f8788380-c582-11eb-8183-29a493b04c37.png)
 
 ### covid Cases by Year/Month
-In this image, we can see cases by age group and gender from January to Decemeber. The thicker the colour the more the number of cases. Also, the line graph shows yearly cases by gender. We can conclude that there were more cases in year 2020 than in year 2021. Lastly, females has the highest number of covid cases.
+In this image, we can see cases by age group and gender from January to Decemeber. The thicker the colour the more the number of cases. Also, the line graph shows yearly cases by gender. We can conclude that there were more cases in year 2020 than in year 2021. Lastly, females have the highest number of covid cases.
 ![Ontario Public Health Unit Covid Statistics (2)](https://user-images.githubusercontent.com/76136277/120877460-a6386200-c584-11eb-9903-d05a3dce2195.png)
