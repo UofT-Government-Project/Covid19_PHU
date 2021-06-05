@@ -190,15 +190,25 @@ Training large number of deep trees can be expensive in terms of computing and m
 # Data Visualization using Tableau
 ### Overview of Covid Cases
 The image below shows the total number of cases, number of cases based on age group, gender and status.
-![Overview of Covid Cases](https://user-images.githubusercontent.com/76136277/120117474-5a885180-c15b-11eb-80c2-7ffe892f8e8f.png)
+![Ontario Public Health Unit Covid Statistics (3)](https://user-images.githubusercontent.com/76136277/120877196-265dc800-c583-11eb-9925-1779e0df8bd2.png)
 
 ### Cases by Age Group and Public Health Unit 
 This image shows the number of cases by Public Health Unit ID vs Age group. 
-![Cases by Age Group_PHU ID](https://user-images.githubusercontent.com/76136277/120117532-ab984580-c15b-11eb-9409-5041b2cd4c5a.png)
+![Ontario Public Health Unit Covid Statistics (4)](https://user-images.githubusercontent.com/76136277/120877269-9c622f00-c583-11eb-98bd-ede0352f18e3.png)
 
 ### Cases by Public Health Unit
-The image was created using tableau map. It shows the number of cases by public health unit. The larger the size, the larger the number of cases.
-![MAP](https://user-images.githubusercontent.com/76136277/120117926-b81d9d80-c15d-11eb-9996-4469401d308f.PNG)
+The image was created using tableau map. It shows the number of cases by public health unit. The larger the size, the larger the number of cases. The second image also shows gender by age PHU.
+![Ontario Public Health Unit Covid Statistics](https://user-images.githubusercontent.com/76136277/120877233-6a50cd00-c583-11eb-8d64-1f9dd6161459.png)
+
+### Overview of Cases by Status
+The image below represents covid status, that is, number of fatal, resolved and not resolved cases by age group, gender and PHU.
+![Ontario Public Health Unit Covid Statistics (1)](https://user-images.githubusercontent.com/76136277/120877171-f8788380-c582-11eb-8183-29a493b04c37.png)
+
+### covid Cases by Year/Month
+In this image, we can see cases by age group and gender from January to Decemeber. The thicker the colour the more the number of cases. Also, the line graph shows yearly cases by gender. We can conclude that there were more cases in year 2020 than in year 2021. Lastly, females have the highest number of covid cases.
+![Ontario Public Health Unit Covid Statistics (2)](https://user-images.githubusercontent.com/76136277/120877460-a6386200-c584-11eb-9903-d05a3dce2195.png)
+
 
 ## Google Presentation
 https://docs.google.com/presentation/d/1R-9hwFz2FQSbQqZFsBUwxTXCbG8xHMHgzqgI43Wb4a4/edit?usp=sharing
+
