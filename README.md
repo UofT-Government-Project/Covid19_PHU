@@ -136,7 +136,9 @@ Similar to the ETL process, the dataset was required to be cleaned and preproces
   - checked the unique value counts for PHU_ID to see if binning is required
   - plotted the density of value count of PHU_ID to determine what values to replace.
 
- <p align='center' src='https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/PHU_density.png'>
+ <p align='center'>
+  <img src='https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/PHU_density.png'>
+ </p>
  
   - binned all PHU_IDs with less than 400 to keep the number of features at 10
   - converted the categorial features to continues by using OneHotEncoder from sklearn library
