@@ -274,10 +274,10 @@ In this image, we can see cases by age group and gender from January to Decemebe
 ## Dashboard 
 
 An interactive dashboard has been created providing statistics of age group and gender for each Public Health Unit in Ontario. <br>
-The sample data was extracted using pandas in Python to clean data using similar process as the ETL.  Then the data was grouped by each PHU to tabulate totals.  Thereafter the final dataframe was transformed into a preferred JSON format.  *Step by step process can be seen in [!Processing csv_to_json](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/JS_Dashboard/processing_csv_to_json.ipynb).*  <br>
+The sample data was extracted using pandas in Python to clean data using similar process as the ETL.  Then the data was grouped by each PHU to tabulate totals.  Thereafter the final dataframe was transformed into a preferred JSON format.  *Step by step process can be seen in [Processing csv_to_json](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/JS_Dashboard/processing_csv_to_json.ipynb).*  <br>
 Once data was saved as required, the file was called and filtered into a JavaScript file using D3.  With each iteration 3 charts were created using plotly.  Then the data has been displayed in HTML file calling bootstrap 3 to format the positioning of each chart. <br>
 <br>
-*The interactive dashboard has been deployed using github pages.  [!Statistics of Public Health Units in Ontario - Dashboard](https://uoft-government-project.github.io/Covid19_PHU/)
+*The interactive dashboard has been deployed using github pages.  [Statistics of Public Health Units in Ontario - Dashboard](https://uoft-government-project.github.io/Covid19_PHU/)
 
 
 ## Google Presentation
