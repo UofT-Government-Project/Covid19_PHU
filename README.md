@@ -7,17 +7,6 @@
 ## Overview
 This project is to showcase the strategical thinking and group efforts to predict and analyze the Covid-19 data. It is to recognize the trends of the highs and lows of Covid 19 cases at each of the 34 Public Health Unit in Ontario, Canada.<br>
 <br>
-## Communication protocol
-A group chat has been set up in Slack.  This will be the primary platform for ongoing correspondence by each team member while working on our individual roles for each segment.  Every Monday and Wednesday evenings will be an opportunity to meet via zoom and discussing the current week's agenda.  Every Sunday the team will connect via Google Meet as well to finalize the submission of the current week.  Additional meetings will be set up throughout the week when needed.<br>
-Phone numbers have been exchanged and a group chat set up on WhatsApp for ad hoc communications as well. <br>
-*Collaborators:* [Lida](https://github.com/lidajav), [Tarana](https://github.com/taranahassan), [Michelle](https://github.com/MichelleGoldfinger), [Blessing](https://github.com/Physsyb), [Faridah](https://github.com/faridah-m).
-
-### Team Member roles:
-***Tarana:***  Managining github and creating interactive dashboard.<br>
-***Faridah:***  Creating presentation on google slides<br>
-***Michelle:***  Creating an ERD and database.<br>
-***Lida:*** Creating the machine learning model. <br>
-***Blessing:***  Creating dashboard using a BI tool.
 
 # Research goal
 ***How do we determine the eligibility to excute a vaccination roll-out program?***
@@ -39,11 +28,8 @@ Below are the steps taken to provide results for this analysis.
 The original data downloaded had 527,180 records which is a much larger file to work with and push in github.  Therefore the dataset has been scaled down using a random sample method and creating a [sample_covid_dataset.csv](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Datasource/sample_covid_dataset.csv), resulting in 13,524 records.<br>
 This sampled dataset has been used for the database, machine learning model and the exploratory analysis.
 <br>
-Each team member has used the ETL process and saved work under their respective branches to show different perspectives if any.  
-
-The general process that we will be following is as shown below:
-
-![Image](https://github.com/UofT-Government-Project/Covid19_PHU/blob/faridah/ETL%20Process.PNG)
+Each team member has used the ETL process and saved work under their respective branches to show different perspectives if any.  <br>
+*The sampled data has been filtered, cleaned and segregated to create new smaller datasets for each part of the project.*
 
 ### Extract:
 
@@ -51,7 +37,7 @@ For the extract process, the sample dataset was pulled and read using Pandas in 
 
 ### Transform:
 
-The transformation process was required to clean data.  The primary aim of the transformation process is to transform the data into a consistent structure.<br>
+The primary aim of the transformation process is to transform the data into a consistent structure.<br>
   - Drop any columns deemed unnecessary to the analysis <br>
   - Drop any null values<br>
   - Renaming column names for efficiency<br>
@@ -61,9 +47,9 @@ The transformation process was required to clean data.  The primary aim of the t
 
 ### Load:
 
-Finally, data will be loaded into a PostgreSQL database for easy distribution. SQL databases are often the targets of ETL processes, and because SQL is so ubiquitous, even databases that don't use SQL often have SQL-like interfaces.  The dataset will also be used for the project dashboard. <br>
+Finally, data was loaded into a PostgreSQL database for easy distribution. SQL databases are often the targets of ETL processes, and because SQL is so ubiquitous, even databases that don't use SQL often have SQL-like interfaces.  The dataset will also be used for the project dashboard. <br>
 <br>
-![Image](https://github.com/UofT-Government-Project/Covid19_PHU/blob/faridah/ETL_Whole.PNG)
+![Image](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/ETL_Whole.PNG?raw=)
 <br>
 <br>
 
@@ -72,14 +58,19 @@ After the cleaning and preprocessing of the dataset, the [cleaned_dataset](https
 
 ### ERD:
 
-<img width="1338" alt="Covid19_PHU_ERD1" src="https://user-images.githubusercontent.com/75905911/119560169-95f8d980-bd71-11eb-9856-01d72383ade1.png">
+<p align='center'> 
+  <img src="https://user-images.githubusercontent.com/75905911/119560169-95f8d980-bd71-11eb-9856-01d72383ade1.png">
+</p>
 
-<img width="1304" alt="Covid19_PHU_ERD2" src="https://user-images.githubusercontent.com/75905911/119560180-98f3ca00-bd71-11eb-9926-755b8e07d208.png">
+<p align='center'>
+  <img src="https://user-images.githubusercontent.com/75905911/119560180-98f3ca00-bd71-11eb-9926-755b8e07d208.png">
+</p>
 <br>
 
 ### PostgreSQL Database:
 
-The cleaned data was imported into a SQL database, Postgres using pgAdmin.  Using queries, a table named "phu" was created to host the entire dataset.  Further queries and fitering the main table, additional tables were created as well and then saved as csv files; [PHU_locations.csv](https://github.com/UofT-Government-Project/Covid19_PHU/blob/michelle/Covid19_Datasources/PHU_locations.csv), [phu_age_group_final.csv](https://github.com/UofT-Government-Project/Covid19_PHU/blob/michelle/Covid19_Datasources/phu_age_group_final.csv) and [phu_gender_final.csv](https://github.com/UofT-Government-Project/Covid19_PHU/blob/michelle/Covid19_Datasources/phu_gender_final.csv).<br>
+The cleaned data was imported into a SQL database, Postgres using pgAdmin.  Using queries, a table named "phu" was created to host the entire dataset.  Further querying the main table, additional tables were created and then saved as csv files in [Datasource](https://github.com/UofT-Government-Project/Covid19_PHU/tree/main/Datasource).  The new files were used by team members for different aspects of the project.<br>
+<br>
 *[schema1.sql](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/schema1.sql) file shows the queries.*
 
 Using the newly saved csv files, four more tables were created and their corresponding data imported with queries.<br>
@@ -93,46 +84,42 @@ Using the newly saved csv files, four more tables were created and their corresp
 4.  PHU_Age_Group_Final - contains the age group per case associated with each PHU ID.
 
 
+<img align='center' src="https://user-images.githubusercontent.com/75905911/119559821-2aaf0780-bd71-11eb-81a4-6d1cfcb17753.png">
 
-<img width="1067" alt="phu" src="https://user-images.githubusercontent.com/75905911/119559821-2aaf0780-bd71-11eb-81a4-6d1cfcb17753.png">
+<img align='centersrc="https://user-images.githubusercontent.com/75905911/119559849-30a4e880-bd71-11eb-8b03-d13f02aeb44c.png">
 
-<img width="474" alt="phu_gender_final" src="https://user-images.githubusercontent.com/75905911/119559849-30a4e880-bd71-11eb-8b03-d13f02aeb44c.png">
-
-<img width="495" alt="phu_age_group_final" src="https://user-images.githubusercontent.com/75905911/119559835-2da9f800-bd71-11eb-96ea-424241034d8e.png">
+<img align='center' src="https://user-images.githubusercontent.com/75905911/119559835-2da9f800-bd71-11eb-96ea-424241034d8e.png">
 
 ### Joins:
 
 Two more tables were created by joining tables using the inner join method:
   1.  phu_by_age_and_outcome <br>
-<img width="640" alt="phu_by_age_and_outcome" src="https://user-images.githubusercontent.com/75905911/119880776-9670ac00-befa-11eb-8920-9e36496aca8b.png">
+<img align='center' src="https://user-images.githubusercontent.com/75905911/119880776-9670ac00-befa-11eb-8920-9e36496aca8b.png">
 
-<img width="1091" alt="phu_by_age_and_outcome" src="https://user-images.githubusercontent.com/75905911/119879902-b6ec3680-bef9-11eb-8f79-191951a1fe4e.png">
+<img align='center' src="https://user-images.githubusercontent.com/75905911/119879902-b6ec3680-bef9-11eb-8f79-191951a1fe4e.png">
 
   2.  phu_by_gender_and_outcome <br>
 
-<img width="577" alt="phu_by_gender_and_outcome" src="https://user-images.githubusercontent.com/75905911/119880078-e13df400-bef9-11eb-8de1-acae1db62c3e.png">
+<img align='center' src="https://user-images.githubusercontent.com/75905911/119880078-e13df400-bef9-11eb-8de1-acae1db62c3e.png">
 
-<img width="1073" alt="phu_by_gender_and_outcome" src="https://user-images.githubusercontent.com/75905911/119879939-c10e3500-bef9-11eb-8175-eafed7f30472.png">
+<img align='center' src="https://user-images.githubusercontent.com/75905911/119879939-c10e3500-bef9-11eb-8175-eafed7f30472.png">
 
 ### Connection String:
 
 To create a connection from the database into PostgreSql, the SQLAlchemy's create engine library was used to load the refined csv file.
 
-<img width="1381" alt="Connection String" src="https://user-images.githubusercontent.com/75905911/119559713-09e6b200-bd71-11eb-959b-462f747fbfcf.png">
+<img align='center' src="https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/Connection%20String.png?raw=true">
 
 ### Database Storage:
 
 A database instance was created on AWS' RDS (relational database) and four buckets, one for each table, were created using S3 - a public cloud storage on AWS.
 
-<img width="1082" alt="AWS RDS" src="https://user-images.githubusercontent.com/75905911/119559642-f2a7c480-bd70-11eb-81bd-8575e47d3c99.png">
+<img align='center' src="https://user-images.githubusercontent.com/75905911/119559642-f2a7c480-bd70-11eb-81bd-8575e47d3c99.png">
 
-<img width="1110" alt="AWS S3" src="https://user-images.githubusercontent.com/75905911/119559660-f9ced280-bd70-11eb-9c77-85b4c9e519b5.png">
+<img align="center" src="https://user-images.githubusercontent.com/75905911/119559660-f9ced280-bd70-11eb-9c77-85b4c9e519b5.png">
 <br>
 
-## Machine Learning
-
-For a machine learning model, particular steps need to be followed to ensure a successful model. <br>
-![ML Flowchart](https://github.com/UofT-Government-Project/Covid19_PHU/blob/Week_1/Images/ML_flowchart.png?raw=true)  
+## Prediction with Machine Learning
 
 ### The Machine learning model: 
 
@@ -149,7 +136,9 @@ Similar to the ETL process, the dataset was required to be cleaned and preproces
   - checked the unique value counts for PHU_ID to see if binning is required
   - plotted the density of value count of PHU_ID to determine what values to replace.
 
- ![PHU Density](Images/PHU_density.png)
+ <p align='center'>
+  <img src='https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/PHU_density.png'>
+ </p>
  
   - binned all PHU_IDs with less than 400 to keep the number of features at 10
   - converted the categorial features to continues by using OneHotEncoder from sklearn library
@@ -167,12 +156,16 @@ Furthermore both training and testing data sets were then scaled to normalize th
 
 ### RandomForest Classifier ML model:
 
-***The reasons why this model was selected***
+***The pros and cons of RFC***
+The RFC model was chosen for multiple positive reasons:
   - because it reduces the chances of overfitting by using decision trees which improves high accuracy
   - the model is robust to outliers
   - it works well with both categorical and continous values
   - the correlation between features are minimal and therefore reduces the number of multiple learning algorithms
   - it automates missing values in the data
+ <br>
+ Though the RFC model has many positive attributes, there are some limitations in the performance. <br>
+Training large number of deep trees can be expensive in terms of computing and memory usage required.  If the data was much more diverse, the model may not be able to interpret any comparision between individual decision trees.  The RFC model also cannot perform extensively with imbalanced data.
 
 ### Model Results:
 
@@ -181,15 +174,12 @@ Based on the Confusion Matrix below there are 3,152 Covid-19 cases used in the m
   - out of 194 total fatal cases - 29% of the cases were predicted true and 71% were predicted falsely
   - out of 2,958 total resolved cases - 51% of the cases were predicted false and 49% were predicted correct.
 
-![confusion Matrix](Images/Confusion_matrix.png)
+<p align='center'>
+  <img src="Images/Confusion_matrix.png">
+</p>
+<br>
 <br>
 
-### Limitations:
-
-Though the RFC model has many positive attributes, there are some limitations in the performance. <br>
-Training large number of deep trees can be expensive in terms of computing and memory usage required.  If the data was much more diverse, the model may not be able to interpret any comparision between individual decision trees.  The RFC model also cannot perform extensively with imbalanced data.
-<br>
-<br>
 ## Alternative Machine Learning Model
 
 An alternative model was created using another dataset, [cases_by_status_and phu.csv](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Datasource/cases_by_status_and_phu.csv).  This dataset was an exploratory model to predict exponential quantities and measure the accuracy of the model.  A Linear Regression was chosen due to the nature of the data. <br>
@@ -201,67 +191,97 @@ Since the data is based on each of the 34 Public Health Units, the model would n
 <br>
 After running the model the R_squared score was strong at 0.96. <br>
 <br>
-![Image](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/graph_LR.png?raw=true) <br>
-<br>
-This model can predict the number of deaths in the near future if no external factor impacts the data.   It can be used to forecast the implications when the Ministry of Health need to weigh in the ideas of lockdown and or restrictions.  It can also assist the original goal of this analysis - a plan to execute a vaccination roll-out program. 
+<p align='center'>
+  <img src='https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/graph_LR.png?raw=true'>
+</p>
+
+This model can predict the number of deaths in the near future if no external factor impacts the data.   It can be used to forecast the implications when the Ministry of Health need to weigh in the reasons of lockdown and or restrictions.  It can also assist the original goal of this analysis - a plan to execute a vaccination roll-out program that prioritizes based on deaths at each PHU. 
 <br>
 <br>
 
 ## Exploratory Analysis
 
-In exploring the data with further analysis on Python, the results can identify and isolate specific information.  Such as:
+In exploring the data with further analysis on Python, the results can identify and isolate specific information overall in Ontario.  Such as:
   - Identifying the number of cases per age group.  Based on the pie chart below, the highest number of cases are within the 20 years of age at 14.7% and the lowest at 5.9% within the age of 70.<br>
 <br>
 
-![Covid_cases_by age_group](https://github.com/UofT-Government-Project/Covid19_PHU/blob/michelle/Visualizations/Covid_19_cases_by_age_group.png?raw=true)
-<br>
+<p align='center'>
+  <img src='https://github.com/UofT-Government-Project/Covid19_PHU/blob/michelle/Visualizations/Covid_19_cases_by_age_group.png?raw=true'>
+</p>
+
   - Number of cases per gender.  This chart reveals females have been more of the victim for contracting Covid-19, at 54.1% vs. males at 45.1%. <br>
   
-![Covid_cases_by gender](https://github.com/UofT-Government-Project/Covid19_PHU/blob/michelle/Visualizations/Covid_19_cases_by_gender.png?raw=true)
-<br>
+<p align='center'>
+  <img src='https://github.com/UofT-Government-Project/Covid19_PHU/blob/michelle/Visualizations/Covid_19_cases_by_gender.png?raw=true'>
+</p>
+
   - Cases by age and gender.  Below chart segregates the cases by gender and age.  Highest cases are females within the age of 40 and lowest are male in the ages of 90 +. <br>
   
-![Cases by age_gender](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/age_gender.png?raw=true)
-<br>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/75437852/120935338-4c44b300-c6d0-11eb-9649-2507eef5b96a.png">
+</p>
+
   - Percentage of fatalities per gender reveals a higher rate for females at 6.41%, this would be obvious due to higher number of cases in females. <br>
  
-![Fatal_rates](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/fatal_by_gender.png?raw=true)
-<br>
+<p align="center">
+  <img src="https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/fatal_by_gender.png?raw=true">
+</p>
 <br>
  
- # Data Visualization using Tableau
+ ## Storyboard
  
- 1.  Overview of Covid Cases
+ Tableau has been used to create the final synopsis of the project's finding and display as a storyboard. <br>
+ Below are the visualizations and link.
+ 
+  1.  **Overview of Covid Cases**
 
 The image below shows the total number of cases, number of cases based on age group, gender and status.
-![Ontario Public Health Unit Covid Statistics (3)](https://user-images.githubusercontent.com/76136277/120877196-265dc800-c583-11eb-9925-1779e0df8bd2.png)
+<p align='center'>
+  <img src='https://user-images.githubusercontent.com/76136277/120877196-265dc800-c583-11eb-9925-1779e0df8bd2.png'>
+</p>
 
-### Cases by Age Group and Public Health Unit 
+  2.  **Cases by Age Group and Public Health Unit**
+  
 This image shows the number of cases by Public Health Unit ID vs Age group. 
-![Ontario Public Health Unit Covid Statistics (4)](https://user-images.githubusercontent.com/76136277/120877269-9c622f00-c583-11eb-98bd-ede0352f18e3.png)
+<p align='center'>
+  <img src='https://user-images.githubusercontent.com/76136277/120877269-9c622f00-c583-11eb-98bd-ede0352f18e3.png'>
+</p>
 
-### Cases by Public Health Unit
+  3.  **Cases by Public Health Unit**
+
 The image was created using tableau map. It shows the number of cases by public health unit. The larger the size, the larger the number of cases. The second image also shows gender by age PHU.
-![Ontario Public Health Unit Covid Statistics](https://user-images.githubusercontent.com/76136277/120877233-6a50cd00-c583-11eb-8d64-1f9dd6161459.png)
+<p align='center'>
+  <img src='https://user-images.githubusercontent.com/76136277/120877233-6a50cd00-c583-11eb-8d64-1f9dd6161459.png'>
+</p>
 
-### Overview of Cases by Status
+  4.  **Overview of Cases by Status**
+
 The image below represents covid status, that is, number of fatal, resolved and not resolved cases by age group, gender and PHU.
-![Ontario Public Health Unit Covid Statistics (1)](https://user-images.githubusercontent.com/76136277/120877171-f8788380-c582-11eb-8183-29a493b04c37.png)
+<p align='center'> 
+  <img src='https://user-images.githubusercontent.com/76136277/120877171-f8788380-c582-11eb-8183-29a493b04c37.png'>
+</p>
 
-### covid Cases by Year/Month
+  5.  **Covid Cases by Year/Month**
+
 In this image, we can see cases by age group and gender from January to Decemeber. The thicker the colour the more the number of cases. Also, the line graph shows yearly cases by gender. We can conclude that there were more cases in year 2020 than in year 2021. Lastly, females have the highest number of covid cases.
-![Ontario Public Health Unit Covid Statistics (2)](https://user-images.githubusercontent.com/76136277/120877460-a6386200-c584-11eb-9903-d05a3dce2195.png)
+<p align='center'>' 
+  <img src='https://user-images.githubusercontent.com/76136277/120877460-a6386200-c584-11eb-9903-d05a3dce2195.png'>
+</p>
 
-## Dashboard
+[Storyboard Link](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Ontario_Public_Health_Unit_Covid_Cases_v2020.4.twbx)
+<br>
 
-An interactive dashboard will be created in the following week.  The dashboard will provide option to select a specific Public Health Unit which will then provide details of location, number of cases for that specific unit and isolated case numbers based on gender and age.  This will be created using plotly on JavaScript and displayed via HTML. <br>
+## Dashboard 
+
+An interactive dashboard has been created providing statistics of age group and gender for each Public Health Unit in Ontario. <br>
+The sample data was extracted using pandas in Python to clean data using similar process as the ETL.  Then the data was grouped by each PHU to tabulate totals.  Thereafter the final dataframe was transformed into a preferred JSON format.  *Step by step process can be seen in [!Processing csv_to_json](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/JS_Dashboard/processing_csv_to_json.ipynb).*  <br>
+Once data was saved as required, the file was called and filtered into a JavaScript file using D3.  With each iteration 3 charts were created using plotly.  Then the data has been displayed in HTML file calling bootstrap 3 to format the positioning of each chart. <br>
 <br>
-Tableau will be used as well to create a dashboard which will highlight further charts and or graphs similar to above exploratory analysis.  All dashboards will be compiled together to create a storyboard that can be shared with public and or used to present.  Below are some of the images of analysis using Tableau.
-<br>
-![MAP](https://user-images.githubusercontent.com/76136277/120117926-b81d9d80-c15d-11eb-9996-4469401d308f.PNG)
-<br>
+*The interactive dashboard has been deployed using github pages.  [!Statistics of Public Health Units in Ontario - Dashboard](https://uoft-government-project.github.io/Covid19_PHU/)
 
 
 ## Google Presentation
+
+Presentation showcasing the project:
 https://docs.google.com/presentation/d/1R-9hwFz2FQSbQqZFsBUwxTXCbG8xHMHgzqgI43Wb4a4/edit?usp=sharing
 
