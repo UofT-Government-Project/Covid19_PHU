@@ -7,17 +7,6 @@
 ## Overview
 This project is to showcase the strategical thinking and group efforts to predict and analyze the Covid-19 data. It is to recognize the trends of the highs and lows of Covid 19 cases at each of the 34 Public Health Unit in Ontario, Canada.<br>
 <br>
-## Communication protocol
-A group chat has been set up in Slack.  This will be the primary platform for ongoing correspondence by each team member while working on our individual roles for each segment.  Every Monday and Wednesday evenings will be an opportunity to meet via zoom and discussing the current week's agenda.  Every Sunday the team will connect via Google Meet as well to finalize the submission of the current week.  Additional meetings will be set up throughout the week when needed.<br>
-Phone numbers have been exchanged and a group chat set up on WhatsApp for ad hoc communications as well. <br>
-*Collaborators:* [Lida](https://github.com/lidajav), [Tarana](https://github.com/taranahassan), [Michelle](https://github.com/MichelleGoldfinger), [Blessing](https://github.com/Physsyb), [Faridah](https://github.com/faridah-m).
-
-### Team Member roles:
-***Tarana:***  Managining github and creating interactive dashboard.<br>
-***Faridah:***  Creating presentation on google slides<br>
-***Michelle:***  Creating an ERD and database.<br>
-***Lida:*** Creating the machine learning model. <br>
-***Blessing:***  Creating dashboard using a BI tool.
 
 # Research goal
 ***How do we determine the eligibility to excute a vaccination roll-out program?***
@@ -39,11 +28,8 @@ Below are the steps taken to provide results for this analysis.
 The original data downloaded had 527,180 records which is a much larger file to work with and push in github.  Therefore the dataset has been scaled down using a random sample method and creating a [sample_covid_dataset.csv](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Datasource/sample_covid_dataset.csv), resulting in 13,524 records.<br>
 This sampled dataset has been used for the database, machine learning model and the exploratory analysis.
 <br>
-Each team member has used the ETL process and saved work under their respective branches to show different perspectives if any.  
-
-The general process that we will be following is as shown below:
-
-![Image](https://github.com/UofT-Government-Project/Covid19_PHU/blob/faridah/ETL%20Process.PNG)
+Each team member has used the ETL process and saved work under their respective branches to show different perspectives if any.  <br>
+*The sampled data has been filtered, cleaned and segregated to create new smaller datasets for each part of the project.*
 
 ### Extract:
 
@@ -51,7 +37,7 @@ For the extract process, the sample dataset was pulled and read using Pandas in 
 
 ### Transform:
 
-The transformation process was required to clean data.  The primary aim of the transformation process is to transform the data into a consistent structure.<br>
+The primary aim of the transformation process is to transform the data into a consistent structure.<br>
   - Drop any columns deemed unnecessary to the analysis <br>
   - Drop any null values<br>
   - Renaming column names for efficiency<br>
@@ -61,9 +47,9 @@ The transformation process was required to clean data.  The primary aim of the t
 
 ### Load:
 
-Finally, data will be loaded into a PostgreSQL database for easy distribution. SQL databases are often the targets of ETL processes, and because SQL is so ubiquitous, even databases that don't use SQL often have SQL-like interfaces.  The dataset will also be used for the project dashboard. <br>
+Finally, data was loaded into a PostgreSQL database for easy distribution. SQL databases are often the targets of ETL processes, and because SQL is so ubiquitous, even databases that don't use SQL often have SQL-like interfaces.  The dataset will also be used for the project dashboard. <br>
 <br>
-![Image](https://github.com/UofT-Government-Project/Covid19_PHU/blob/faridah/ETL_Whole.PNG)
+![Image](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/ETL_Whole.PNG?raw=)
 <br>
 <br>
 
@@ -79,7 +65,8 @@ After the cleaning and preprocessing of the dataset, the [cleaned_dataset](https
 
 ### PostgreSQL Database:
 
-The cleaned data was imported into a SQL database, Postgres using pgAdmin.  Using queries, a table named "phu" was created to host the entire dataset.  Further queries and fitering the main table, additional tables were created as well and then saved as csv files; [PHU_locations.csv](https://github.com/UofT-Government-Project/Covid19_PHU/blob/michelle/Covid19_Datasources/PHU_locations.csv), [phu_age_group_final.csv](https://github.com/UofT-Government-Project/Covid19_PHU/blob/michelle/Covid19_Datasources/phu_age_group_final.csv) and [phu_gender_final.csv](https://github.com/UofT-Government-Project/Covid19_PHU/blob/michelle/Covid19_Datasources/phu_gender_final.csv).<br>
+The cleaned data was imported into a SQL database, Postgres using pgAdmin.  Using queries, a table named "phu" was created to host the entire dataset.  Further querying the main table, additional tables were created and then saved as csv files in [Datasource](https://github.com/UofT-Government-Project/Covid19_PHU/tree/main/Datasource).  The new files were used by team members for different aspects of the project.<br>
+<br>
 *[schema1.sql](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/schema1.sql) file shows the queries.*
 
 Using the newly saved csv files, four more tables were created and their corresponding data imported with queries.<br>
@@ -129,10 +116,7 @@ A database instance was created on AWS' RDS (relational database) and four bucke
 <img width="1110" alt="AWS S3" src="https://user-images.githubusercontent.com/75905911/119559660-f9ced280-bd70-11eb-9c77-85b4c9e519b5.png">
 <br>
 
-## Machine Learning
-
-For a machine learning model, particular steps need to be followed to ensure a successful model. <br>
-![ML Flowchart](https://github.com/UofT-Government-Project/Covid19_PHU/blob/Week_1/Images/ML_flowchart.png?raw=true)  
+## Prediction with Machine Learning
 
 ### The Machine learning model: 
 
@@ -167,12 +151,16 @@ Furthermore both training and testing data sets were then scaled to normalize th
 
 ### RandomForest Classifier ML model:
 
-***The reasons why this model was selected***
+***The pros and cons of RFC***
+The RFC model was chosen for multiple positive reasons:
   - because it reduces the chances of overfitting by using decision trees which improves high accuracy
   - the model is robust to outliers
   - it works well with both categorical and continous values
   - the correlation between features are minimal and therefore reduces the number of multiple learning algorithms
   - it automates missing values in the data
+ <br>
+ Though the RFC model has many positive attributes, there are some limitations in the performance. <br>
+Training large number of deep trees can be expensive in terms of computing and memory usage required.  If the data was much more diverse, the model may not be able to interpret any comparision between individual decision trees.  The RFC model also cannot perform extensively with imbalanced data.
 
 ### Model Results:
 
@@ -181,13 +169,10 @@ Based on the Confusion Matrix below there are 3,152 Covid-19 cases used in the m
   - out of 194 total fatal cases - 29% of the cases were predicted true and 71% were predicted falsely
   - out of 2,958 total resolved cases - 51% of the cases were predicted false and 49% were predicted correct.
 
-![confusion Matrix](Images/Confusion_matrix.png)
-<br>
-
-### Limitations:
-
-Though the RFC model has many positive attributes, there are some limitations in the performance. <br>
-Training large number of deep trees can be expensive in terms of computing and memory usage required.  If the data was much more diverse, the model may not be able to interpret any comparision between individual decision trees.  The RFC model also cannot perform extensively with imbalanced data.
+![confusion Matrix]
+<p align='center'>
+  <img src="Images/Confusion_matrix.png">
+ </p>
 <br>
 <br>
 ## Alternative Machine Learning Model
@@ -203,13 +188,13 @@ After running the model the R_squared score was strong at 0.96. <br>
 <br>
 ![Image](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/graph_LR.png?raw=true) <br>
 <br>
-This model can predict the number of deaths in the near future if no external factor impacts the data.   It can be used to forecast the implications when the Ministry of Health need to weigh in the ideas of lockdown and or restrictions.  It can also assist the original goal of this analysis - a plan to execute a vaccination roll-out program. 
+This model can predict the number of deaths in the near future if no external factor impacts the data.   It can be used to forecast the implications when the Ministry of Health need to weigh in the reasons of lockdown and or restrictions.  It can also assist the original goal of this analysis - a plan to execute a vaccination roll-out program that prioritizes based on deaths at each PHU. 
 <br>
 <br>
 
 ## Exploratory Analysis
 
-In exploring the data with further analysis on Python, the results can identify and isolate specific information.  Such as:
+In exploring the data with further analysis on Python, the results can identify and isolate specific information overall in Ontario.  Such as:
   - Identifying the number of cases per age group.  Based on the pie chart below, the highest number of cases are within the 20 years of age at 14.7% and the lowest at 5.9% within the age of 70.<br>
 <br>
 
@@ -221,11 +206,18 @@ In exploring the data with further analysis on Python, the results can identify 
 <br>
   - Cases by age and gender.  Below chart segregates the cases by gender and age.  Highest cases are females within the age of 40 and lowest are male in the ages of 90 +. <br>
   
-![Cases by age_gender](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/age_gender.png?raw=true)
+![Cases by age_gender]
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/75437852/120935338-4c44b300-c6d0-11eb-9649-2507eef5b96a.png">
+</p>
+
 <br>
   - Percentage of fatalities per gender reveals a higher rate for females at 6.41%, this would be obvious due to higher number of cases in females. <br>
  
-![Fatal_rates](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/fatal_by_gender.png?raw=true)
+![Fatal_rates]
+<p align="center">
+  <img src="https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/fatal_by_gender.png?raw=true">
+</p>
 <br>
 <br>
  
