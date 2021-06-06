@@ -231,7 +231,7 @@ In exploring the data with further analysis on Python, the results can identify 
  ## Storyboard and Interactive Dashboard
  
  Multiple platforms have been used to create the final synopsis of the project's finding. <br>
- A storyboard with exploratory analysis have been created using Tableau.  Visualizations and results are below.
+ Below are the visualizations and link of the storyboard using Tableau.
  
   1.  **Overview of Covid Cases**
 
