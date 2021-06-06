@@ -174,7 +174,9 @@ Based on the Confusion Matrix below there are 3,152 Covid-19 cases used in the m
   - out of 194 total fatal cases - 29% of the cases were predicted true and 71% were predicted falsely
   - out of 2,958 total resolved cases - 51% of the cases were predicted false and 49% were predicted correct.
 
-<img align='center' src="Images/Confusion_matrix.png">
+<p align='center'>
+  <img src="Images/Confusion_matrix.png">
+</p>
 <br>
 <br>
 ## Alternative Machine Learning Model
@@ -188,8 +190,10 @@ Since the data is based on each of the 34 Public Health Units, the model would n
 <br>
 After running the model the R_squared score was strong at 0.96. <br>
 <br>
-<img align='center' src='https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/graph_LR.png?raw=true'> <br>
-<br>
+<p align='center'>
+  <img src='https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/graph_LR.png?raw=true'>
+</p>
+
 This model can predict the number of deaths in the near future if no external factor impacts the data.   It can be used to forecast the implications when the Ministry of Health need to weigh in the reasons of lockdown and or restrictions.  It can also assist the original goal of this analysis - a plan to execute a vaccination roll-out program that prioritizes based on deaths at each PHU. 
 <br>
 <br>
@@ -200,20 +204,24 @@ In exploring the data with further analysis on Python, the results can identify 
   - Identifying the number of cases per age group.  Based on the pie chart below, the highest number of cases are within the 20 years of age at 14.7% and the lowest at 5.9% within the age of 70.<br>
 <br>
 
-<img align='center' src='https://github.com/UofT-Government-Project/Covid19_PHU/blob/michelle/Visualizations/Covid_19_cases_by_age_group.png?raw=true'>
-<br>
+<p align='center'>
+  <img src='https://github.com/UofT-Government-Project/Covid19_PHU/blob/michelle/Visualizations/Covid_19_cases_by_age_group.png?raw=true'>
+</p>
   - Number of cases per gender.  This chart reveals females have been more of the victim for contracting Covid-19, at 54.1% vs. males at 45.1%. <br>
   
-<img align='center' src='https://github.com/UofT-Government-Project/Covid19_PHU/blob/michelle/Visualizations/Covid_19_cases_by_gender.png?raw=true'>
-<br>
+<p align='center'>
+  <img src='https://github.com/UofT-Government-Project/Covid19_PHU/blob/michelle/Visualizations/Covid_19_cases_by_gender.png?raw=true'>
+</p>
   - Cases by age and gender.  Below chart segregates the cases by gender and age.  Highest cases are females within the age of 40 and lowest are male in the ages of 90 +. <br>
   
-<img align="center" src="https://user-images.githubusercontent.com/75437852/120935338-4c44b300-c6d0-11eb-9649-2507eef5b96a.png">
-<br>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/75437852/120935338-4c44b300-c6d0-11eb-9649-2507eef5b96a.png">
+</p>
   - Percentage of fatalities per gender reveals a higher rate for females at 6.41%, this would be obvious due to higher number of cases in females. <br>
  
-<img align="center" src="https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/fatal_by_gender.png?raw=true">
-<br>
+<p align="center">
+  <img src="https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/fatal_by_gender.png?raw=true">
+</p>
 <br>
  
  ## Storyboard and Interactive Dashboard
@@ -227,27 +235,37 @@ In exploring the data with further analysis on Python, the results can identify 
   1.  **Overview of Covid Cases**
 
 The image below shows the total number of cases, number of cases based on age group, gender and status.
-<img align='center' src='https://user-images.githubusercontent.com/76136277/120877196-265dc800-c583-11eb-9925-1779e0df8bd2.png'>
+<p align='center'>
+  <img src='https://user-images.githubusercontent.com/76136277/120877196-265dc800-c583-11eb-9925-1779e0df8bd2.png'>
+</p>
 
   2.  **Cases by Age Group and Public Health Unit**
   
 This image shows the number of cases by Public Health Unit ID vs Age group. 
-<img align='center' src='https://user-images.githubusercontent.com/76136277/120877269-9c622f00-c583-11eb-98bd-ede0352f18e3.png'>
+<p align='center'>
+  <img src='https://user-images.githubusercontent.com/76136277/120877269-9c622f00-c583-11eb-98bd-ede0352f18e3.png'>
+</p>
 
   3.  **Cases by Public Health Unit**
 
 The image was created using tableau map. It shows the number of cases by public health unit. The larger the size, the larger the number of cases. The second image also shows gender by age PHU.
-<img align='center' src='https://user-images.githubusercontent.com/76136277/120877233-6a50cd00-c583-11eb-8d64-1f9dd6161459.png'>
+<p align='center'>
+  <img src='https://user-images.githubusercontent.com/76136277/120877233-6a50cd00-c583-11eb-8d64-1f9dd6161459.png'>
+</p>
 
   4.  **Overview of Cases by Status**
 
 The image below represents covid status, that is, number of fatal, resolved and not resolved cases by age group, gender and PHU.
-<img aling='center' src='https://user-images.githubusercontent.com/76136277/120877171-f8788380-c582-11eb-8183-29a493b04c37.png'>
+<p align='center'> 
+  <img src='https://user-images.githubusercontent.com/76136277/120877171-f8788380-c582-11eb-8183-29a493b04c37.png'>
+</p>
 
   5.  **Covid Cases by Year/Month**
 
 In this image, we can see cases by age group and gender from January to Decemeber. The thicker the colour the more the number of cases. Also, the line graph shows yearly cases by gender. We can conclude that there were more cases in year 2020 than in year 2021. Lastly, females have the highest number of covid cases.
-<img align='center' src='https://user-images.githubusercontent.com/76136277/120877460-a6386200-c584-11eb-9903-d05a3dce2195.png'>
+<p align='center'>' 
+  <img src='https://user-images.githubusercontent.com/76136277/120877460-a6386200-c584-11eb-9903-d05a3dce2195.png'>
+</p>
 
 [!Storyboard Link](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Ontario_Public_Health_Unit_Covid_Cases_v2020.4.twbx)
 
