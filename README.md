@@ -208,16 +208,19 @@ In exploring the data with further analysis on Python, the results can identify 
 <p align='center'>
   <img src='https://github.com/UofT-Government-Project/Covid19_PHU/blob/michelle/Visualizations/Covid_19_cases_by_age_group.png?raw=true'>
 </p>
+
   - Number of cases per gender.  This chart reveals females have been more of the victim for contracting Covid-19, at 54.1% vs. males at 45.1%. <br>
   
 <p align='center'>
   <img src='https://github.com/UofT-Government-Project/Covid19_PHU/blob/michelle/Visualizations/Covid_19_cases_by_gender.png?raw=true'>
 </p>
+
   - Cases by age and gender.  Below chart segregates the cases by gender and age.  Highest cases are females within the age of 40 and lowest are male in the ages of 90 +. <br>
   
 <p align="center">
   <img src="https://user-images.githubusercontent.com/75437852/120935338-4c44b300-c6d0-11eb-9649-2507eef5b96a.png">
 </p>
+
   - Percentage of fatalities per gender reveals a higher rate for females at 6.41%, this would be obvious due to higher number of cases in females. <br>
  
 <p align="center">
@@ -227,10 +230,7 @@ In exploring the data with further analysis on Python, the results can identify 
  
  ## Storyboard and Interactive Dashboard
  
- Multiple platforms have been used to create the final synopsis of the project's finding.
- 
- ### Storyboard
- 
+ Multiple platforms have been used to create the final synopsis of the project's finding. <br>
  A storyboard with exploratory analysis have been created using Tableau.  Visualizations and results are below.
  
   1.  **Overview of Covid Cases**
@@ -269,8 +269,7 @@ In this image, we can see cases by age group and gender from January to Decemebe
 </p>
 
 [!Storyboard Link](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Ontario_Public_Health_Unit_Covid_Cases_v2020.4.twbx)
-
-### Dashboard
+<br>
 
 An interactive dashboard has been created providing statistics of age group and gender for each Public Health Unit in Ontario. <br>
 The sample data was extracted using pandas in Python to clean data using similar process as the ETL.  Then the data was grouped by each PHU to tabulate totals.  Thereafter the final dataframe was transformed into a preferred JSON format.  *Step by step process can be seen in [!Processing csv_to_json](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/JS_Dashboard/processing_csv_to_json.ipynb).*  <br>
