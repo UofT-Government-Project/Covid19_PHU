@@ -228,10 +228,10 @@ In exploring the data with further analysis on Python, the results can identify 
 </p>
 <br>
  
- ## Storyboard and Interactive Dashboard
+ ## Storyboard
  
- Multiple platforms have been used to create the final synopsis of the project's finding. <br>
- Below are the visualizations and link of the storyboard using Tableau.
+ Tableau has been used to create the final synopsis of the project's finding and display as a storyboard. <br>
+ Below are the visualizations and link.
  
   1.  **Overview of Covid Cases**
 
@@ -268,8 +268,10 @@ In this image, we can see cases by age group and gender from January to Decemebe
   <img src='https://user-images.githubusercontent.com/76136277/120877460-a6386200-c584-11eb-9903-d05a3dce2195.png'>
 </p>
 
-[!Storyboard Link](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Ontario_Public_Health_Unit_Covid_Cases_v2020.4.twbx)
+[Storyboard Link](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Ontario_Public_Health_Unit_Covid_Cases_v2020.4.twbx)
 <br>
+
+## Dashboard 
 
 An interactive dashboard has been created providing statistics of age group and gender for each Public Health Unit in Ontario. <br>
 The sample data was extracted using pandas in Python to clean data using similar process as the ETL.  Then the data was grouped by each PHU to tabulate totals.  Thereafter the final dataframe was transformed into a preferred JSON format.  *Step by step process can be seen in [!Processing csv_to_json](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/JS_Dashboard/processing_csv_to_json.ipynb).*  <br>
