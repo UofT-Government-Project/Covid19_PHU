@@ -202,3 +202,12 @@ The image was created using tableau map. It shows the number of cases by public 
 
 ## Google Presentation
 https://docs.google.com/presentation/d/1R-9hwFz2FQSbQqZFsBUwxTXCbG8xHMHgzqgI43Wb4a4/edit?usp=sharing
+
+Updated to include:
+- Project topic and reason it was selected
+- Description of your data and where it was sourced
+- Questions you intend to answer with the data
+- Description of the data exploration your team conducted
+- Description of the analysis conducted on the data
+- Recount of the different technologies, tools, languages, and algorithms used throughout the project
+
