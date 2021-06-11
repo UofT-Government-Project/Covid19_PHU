@@ -62,11 +62,11 @@ After the cleaning and preprocessing of the dataset, the [cleaned_dataset](https
 ### ERD:
 
 <p align='center'> 
-  <img src="https://user-images.githubusercontent.com/75905911/119560169-95f8d980-bd71-11eb-9856-01d72383ade1.png">
+  <img width='500' height='247' src="https://user-images.githubusercontent.com/75905911/119560169-95f8d980-bd71-11eb-9856-01d72383ade1.png">
 </p>
 
 <p align='center'>
-  <img src="https://user-images.githubusercontent.com/75905911/119560180-98f3ca00-bd71-11eb-9926-755b8e07d208.png">
+  <img width='500' height='247' src="https://user-images.githubusercontent.com/75905911/119560180-98f3ca00-bd71-11eb-9926-755b8e07d208.png">
 </p>
 <br>
 
@@ -88,12 +88,10 @@ Using the newly saved csv files, four more tables were created and their corresp
 
 
 <p align='center>
-  <img src="https://user-images.githubusercontent.com/75905911/119559849-30a4e880-bd71-11eb-8b03-d13f02aeb44c.png">
+  <img width='500' height='247' src="https://user-images.githubusercontent.com/75905911/119559849-30a4e880-bd71-11eb-8b03-d13f02aeb44c.png">
 </p>
                                
-<p align='center'>
-   <img src="https://user-images.githubusercontent.com/75905911/119559835-2da9f800-bd71-11eb-96ea-424241034d8e.png">
-</p>
+
                                 
 ### Joins:
 
