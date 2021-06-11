@@ -72,9 +72,9 @@ After the cleaning and preprocessing of the dataset, the [cleaned_dataset](https
 
 ### PostgreSQL Database:
 
-The cleaned data was imported into a SQL database, Postgres using pgAdmin.  Using queries, a table named "phu" was created to host the entire dataset.  Further querying the main table, additional tables were created and then saved as csv files in [Datasource](https://github.com/UofT-Government-Project/Covid19_PHU/tree/main/Datasource).  The new files were used by team members for different aspects of the project.<br>
+The cleaned data was saved into AWS RDS using S3 buckets which was then imported into a SQL database, Postgres using pgAdmin.  Using queries, a table named "phu" was created to host the entire dataset.  Further querying the main table, additional tables were created and then saved as csv files in [Datasource](https://github.com/UofT-Government-Project/Covid19_PHU/tree/main/Datasource).  The new files were used by team members for different aspects of the project.<br>
 <br>
-*[schema1.sql](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/schema1.sql) file shows the queries.*
+*[schema1.sql](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/SQL_Schemas/schema1.sql) file shows the queries.*
 
 Using the newly saved csv files, four more tables were created and their corresponding data imported with queries.<br>
 *[schema2.sql](https://github.com/UofT-Government-Project/Covid19_PHU/blob/Week_2/schema2.sql) file shows the additional queries.*
@@ -87,12 +87,14 @@ Using the newly saved csv files, four more tables were created and their corresp
 4.  PHU_Age_Group_Final - contains the age group per case associated with each PHU ID.
 
 
-<img align='center' src="https://user-images.githubusercontent.com/75905911/119559821-2aaf0780-bd71-11eb-81a4-6d1cfcb17753.png">
-
-<img align='centersrc="https://user-images.githubusercontent.com/75905911/119559849-30a4e880-bd71-11eb-8b03-d13f02aeb44c.png">
-
-<img align='center' src="https://user-images.githubusercontent.com/75905911/119559835-2da9f800-bd71-11eb-96ea-424241034d8e.png">
-
+<p align='center>
+  <img width='500' height='247' src="https://user-images.githubusercontent.com/75905911/119559849-30a4e880-bd71-11eb-8b03-d13f02aeb44c.png">
+</p>
+                               
+<p align='center'>
+   <img width='500' height='247' src="https://user-images.githubusercontent.com/75905911/119559835-2da9f800-bd71-11eb-96ea-424241034d8e.png">
+</p>
+                                
 ### Joins:
 
 Two more tables were created by joining tables using the inner join method:
