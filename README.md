@@ -62,11 +62,11 @@ After the cleaning and preprocessing of the dataset, the [cleaned_dataset](https
 ### ERD:
 
 <p align='center'> 
-  <img width='500' height='247' src="https://user-images.githubusercontent.com/75905911/119560169-95f8d980-bd71-11eb-9856-01d72383ade1.png">
+  <img src="https://user-images.githubusercontent.com/75905911/119560169-95f8d980-bd71-11eb-9856-01d72383ade1.png">
 </p>
 
 <p align='center'>
-  <img width='247' height='500' src="https://user-images.githubusercontent.com/75905911/119560180-98f3ca00-bd71-11eb-9926-755b8e07d208.png">
+  <img src="https://user-images.githubusercontent.com/75905911/119560180-98f3ca00-bd71-11eb-9926-755b8e07d208.png">
 </p>
 <br>
 
