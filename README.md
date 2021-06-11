@@ -65,6 +65,8 @@ After the cleaning and preprocessing of the dataset, the [cleaned_dataset](https
 
 <p align='center'> 
   <img width='500' height='247' src="https://user-images.githubusercontent.com/75905911/119560169-95f8d980-bd71-11eb-9856-01d72383ade1.png">
+</p>
+<p align='center'>
   <img width='500' height='247' src="https://user-images.githubusercontent.com/75905911/119560180-98f3ca00-bd71-11eb-9926-755b8e07d208.png">
 </p>
 <br>
@@ -327,7 +329,7 @@ Understanding there may be other logistics involved to distribute the vaccine ba
 ## Google Presentation
 
 A presentation is availble that provides sua summary of the steps taken for this analysis:
-https://docs.google.com/presentation/d/1R-9hwFz2FQSbQqZFsBUwxTXCbG8xHMHgzqgI43Wb4a4/edit?usp=sharing
+https://docs.google.com/presentation/d/1EvUDf52QJ8CuFFJVrOCj7XIvXAN0OAFUomOtSCR1YYI/edit?usp=sharing
 
 
 The presentation includes:
