@@ -81,46 +81,63 @@ Using the newly saved csv files, four more tables were created and their corresp
 <br>
 
 #### Tables from schema2.sql:
-1.  PHU_locations - details containing the name and ID associated for a specific PHU (Public Health Unit) along with the coordinates and physical address for all of 34 units.<br>
-2.  PHU - details include the age groups, gender, outcome for each case and the week, month and year for each case associated with each PHU.  An index ID was included to create a primary key to call on during queries.
-3.  PHU_Gender_final - includes the gender and the count associated with each PHU ID.
-4.  PHU_Age_Group_Final - contains the age group per case associated with each PHU ID.
-
-
-<p align='center>
-  <img width='500' height='247' src="https://user-images.githubusercontent.com/75905911/119559849-30a4e880-bd71-11eb-8b03-d13f02aeb44c.png">
+1.  PHU_locations - details containing the name and ID associated for a specific PHU (Public Health Unit) along with the coordinates and physical address for all of 34 units.
+<p align='center'>
+  <img width='500' height='247' src='https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/PHU_locations.png?raw=true'>
 </p>
+2.  PHU - details include the age groups, gender, outcome for each case and the week, month and year for each case associated with each PHU.  An index ID was included to create a primary key to call on during queries.
+<p align='center>
+  <img width='500' height='247' src="https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/phu.png?raw=true">
+</p>
+3.  PHU_Gender_final - includes the gender and the count associated with each PHU ID.
+<p align='center>
+  <img width='247' height='500' src="https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/phu_gender_final.png?raw=true">
+</p>
+4.  PHU_Age_Group_Final - contains the age group per case associated with each PHU ID.
+<p align='center'>
+   <img width='247' height='500' src="https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/phu_age_group_final.png?raw=true">
+</p>                               
                                
-
                                 
 ### Joins:
 
 Two more tables were created by joining tables using the inner join method:
   1.  phu_by_age_and_outcome <br>
-<img align='center' src="https://user-images.githubusercontent.com/75905911/119880776-9670ac00-befa-11eb-8920-9e36496aca8b.png">
+<p align='center'>
+  <img width='500' height='247' src="https://user-images.githubusercontent.com/75905911/119880776-9670ac00-befa-11eb-8920-9e36496aca8b.png">
+</p>
 
-<img align='center' src="https://user-images.githubusercontent.com/75905911/119879902-b6ec3680-bef9-11eb-8f79-191951a1fe4e.png">
+<p align='center'>
+  <img width='500' height='247' src="https://user-images.githubusercontent.com/75905911/119879902-b6ec3680-bef9-11eb-8f79-191951a1fe4e.png">
+</p>
 
   2.  phu_by_gender_and_outcome <br>
 
-<img align='center' src="https://user-images.githubusercontent.com/75905911/119880078-e13df400-bef9-11eb-8de1-acae1db62c3e.png">
+<p align='center'>  
+  <img width='500' height='247' src="https://user-images.githubusercontent.com/75905911/119880078-e13df400-bef9-11eb-8de1-acae1db62c3e.png">
+</p>
 
-<img align='center' src="https://user-images.githubusercontent.com/75905911/119879939-c10e3500-bef9-11eb-8175-eafed7f30472.png">
+<p align='center'>
+  <img width='500' height='247' src="https://user-images.githubusercontent.com/75905911/119879939-c10e3500-bef9-11eb-8175-eafed7f30472.png">
+</p>
 
 ### Connection String:
 
 To create a connection from the database into PostgreSql, the SQLAlchemy's create engine library was used to load the refined csv file.
 
-<img align='center' src="https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/Connection%20String.png?raw=true">
+<img src="https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/Connection%20String.png?raw=true">
 
 ### Database Storage:
 
 A database instance was created on AWS' RDS (relational database) and four buckets, one for each table, were created using S3 - a public cloud storage on AWS.
 
-<img align='center' src="https://user-images.githubusercontent.com/75905911/119559642-f2a7c480-bd70-11eb-81bd-8575e47d3c99.png">
+<p align='center'>
+  <img width='500' height='247' src="https://user-images.githubusercontent.com/75905911/119559642-f2a7c480-bd70-11eb-81bd-8575e47d3c99.png">
+</p>
 
-<img align="center" src="https://user-images.githubusercontent.com/75905911/119559660-f9ced280-bd70-11eb-9c77-85b4c9e519b5.png">
-<br>
+<p alight='center'>
+  <img width='500' height='247' src="https://user-images.githubusercontent.com/75905911/119559660-f9ced280-bd70-11eb-9c77-85b4c9e519b5.png">
+</p>
 
 ## Prediction with Machine Learning
 
