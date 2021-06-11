@@ -126,7 +126,7 @@ Two more tables were created by joining tables using the inner join method:
 </p>
 
 <p align='center'>
-  <img width='800' height='303' src="https://user-images.githubusercontent.com/75905911/119879902-b6ec3680-bef9-11eb-8f79-191951a1fe4e.png">
+  <img width='800' height='450' src="https://user-images.githubusercontent.com/75905911/119879902-b6ec3680-bef9-11eb-8f79-191951a1fe4e.png">
 </p>
 
   2.  phu_by_gender_and_outcome <br>
@@ -137,7 +137,7 @@ Two more tables were created by joining tables using the inner join method:
 
 
 <p align='center'>
-  <img width='800' height='335' src="https://user-images.githubusercontent.com/75905911/119879939-c10e3500-bef9-11eb-8175-eafed7f30472.png">
+  <img width='800' height='453' src="https://user-images.githubusercontent.com/75905911/119879939-c10e3500-bef9-11eb-8175-eafed7f30472.png">
 </p>
 
 
