@@ -12,7 +12,7 @@ This project is to showcase the strategical thinking and group efforts to predic
 # Research goal
 ***How do we determine the eligibility to excute a vaccination roll-out program?***
 
-The goal of this analysis to determine and prioritize the eligibility of a vaccine roll-out program.   The process stated here is to assist the Ministry of Health to identify, prioritize and execute vaccinations based on age group and or gender for future epidemics and pandemics.  <br>
+The goal of this analysis is to plan and execute a successful vaccine roll-out program.   The process stated here is to assist the Ministry of Health to identify, prioritize and execute vaccinations based on age group and or gender for future epidemics and pandemics.  <br>
 Data of current confirmed Covid-19 cases have been collected and used to create a machine learning model that can provide predictions and help understand the probability of higher cases within a specific attribute of demographics.  <br>
 The same data has been used for exploratory analysis to isolate results of each age group and gender for each Public Health Units.  <br>
 Below are the steps taken to provide results for this analysis.
@@ -26,8 +26,8 @@ Below are the steps taken to provide results for this analysis.
 
 ## Extract, Transform & Load
 
-The original data downloaded had 527,180 records which is a much larger file to work with and push in github.  Therefore the dataset has been scaled down using a random sample method and creating a [sample_covid_dataset.csv](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Datasource/sample_covid_dataset.csv), resulting in 13,524 records.<br>
-This sampled dataset has been used for the database, machine learning model and the exploratory analysis.
+The original data downloaded had 522,465 records which is a much larger file to work with and push in github.  Therefore the dataset has been scaled down using a random sample method and creating a [sample_covid_dataset.csv](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Datasource/sample_covid_dataset.csv), resulting in 13,524 records.<br>
+This sampled dataset has been used for the database, machine learning model, exploratory analysis, Tableau and the interactive dashboard.
 <br>
 Each team member has used the ETL process and saved work under their respective branches to show different perspectives if any.  <br>
 *The sampled data has been filtered, cleaned and segregated to create new smaller datasets for each part of the project.*
@@ -48,9 +48,11 @@ The primary aim of the transformation process is to transform the data into a co
 
 ### Load:
 
-Finally, data was loaded into a PostgreSQL database for easy distribution. SQL databases are often the targets of ETL processes, and because SQL is so ubiquitous, even databases that don't use SQL often have SQL-like interfaces.  The dataset will also be used for the project dashboard. <br>
+Finally, data was loaded into a PostgreSQL database for easy distribution. SQL databases are often the targets of ETL processes, and because SQL is so ubiquitous, even databases that don't use SQL often have SQL-like interfaces.  <br>
 <br>
-![Image](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/ETL_Whole.PNG?raw=)
+<p align='center'>
+  <img src='https://raw.githubusercontent.com/UofT-Government-Project/Covid19_PHU/main/Images/ETL_Whole.PNG'>
+</p>
 <br>
 <br>
 
@@ -60,11 +62,11 @@ After the cleaning and preprocessing of the dataset, the [cleaned_dataset](https
 ### ERD:
 
 <p align='center'> 
-  <img src="https://user-images.githubusercontent.com/75905911/119560169-95f8d980-bd71-11eb-9856-01d72383ade1.png">
+  <img width='500' height='247' src="https://user-images.githubusercontent.com/75905911/119560169-95f8d980-bd71-11eb-9856-01d72383ade1.png">
 </p>
 
 <p align='center'>
-  <img src="https://user-images.githubusercontent.com/75905911/119560180-98f3ca00-bd71-11eb-9926-755b8e07d208.png">
+  <img width='500' height='247' src="https://user-images.githubusercontent.com/75905911/119560180-98f3ca00-bd71-11eb-9926-755b8e07d208.png">
 </p>
 <br>
 
