@@ -66,7 +66,7 @@ After the cleaning and preprocessing of the dataset, the [cleaned_dataset](https
 </p>
 
 <p align='center'>
-  <img width='500' height='247' src="https://user-images.githubusercontent.com/75905911/119560180-98f3ca00-bd71-11eb-9926-755b8e07d208.png">
+  <img width='247' height='500' src="https://user-images.githubusercontent.com/75905911/119560180-98f3ca00-bd71-11eb-9926-755b8e07d208.png">
 </p>
 <br>
 
