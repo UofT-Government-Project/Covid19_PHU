@@ -1,3 +1,4 @@
+
 <p align="center">
   <img width="650" height="163" src="https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/Logo.png?raw=true">
 </p>
@@ -284,4 +285,13 @@ Once data was saved as required, the file was called and filtered into a JavaScr
 
 Presentation showcasing the project:
 https://docs.google.com/presentation/d/1R-9hwFz2FQSbQqZFsBUwxTXCbG8xHMHgzqgI43Wb4a4/edit?usp=sharing
+
+
+Updated to include:
+- Project topic and reason it was selected
+- Description of your data and where it was sourced
+- Questions you intend to answer with the data
+- Description of the data exploration your team conducted
+- Description of the analysis conducted on the data
+- Recount of the different technologies, tools, languages, and algorithms used throughout the project
 
