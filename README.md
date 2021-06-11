@@ -297,6 +297,7 @@ In this image, we can see cases by age group and gender on a monthly timeline st
   <img width='800' height='600' src='https://user-images.githubusercontent.com/76136277/120877460-a6386200-c584-11eb-9903-d05a3dce2195.png'>
 </p>
 <br>
+
 ***A full storyboard can be viewed on Tableau Public [here](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Ontario_Public_Health_Unit_Covid_Cases_v2020.4.twbx).***
 <br>
 <br>
@@ -326,10 +327,11 @@ With this unforeseen pandemic, the Government rolled out the vaccination program
 Should there be another pandemic/epidemic in the future, we hope this analysis can shed light  and can be imitated on how to target a specific demographic of the population for each region in Ontario.  <br>
 Understanding there may be other logistics involved to distribute the vaccine based on the results here, a similar analysis can possibly highlight the need to vaccinate a specific part of the population first.  Which not only could avoid further spread but also diminish the cases sooner.
 
-## Google Presentation
+## Presentation
 
-A presentation is availble that provides sua summary of the steps taken for this analysis:
-https://docs.google.com/presentation/d/1EvUDf52QJ8CuFFJVrOCj7XIvXAN0OAFUomOtSCR1YYI/edit?usp=sharing
+A presentation is availble that provides a summary of the steps taken for this analysis:
+
+***View presentation [here](https://docs.google.com/presentation/d/1EvUDf52QJ8CuFFJVrOCj7XIvXAN0OAFUomOtSCR1YYI/edit?usp=sharing).***
 
 
 The presentation includes:
