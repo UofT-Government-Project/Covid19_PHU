@@ -71,11 +71,11 @@ After the cleaning and preprocessing of the dataset, the [cleaned_dataset](https
 
 A database instance was created on AWS' RDS (relational database) and four buckets, one for each table, were created using S3 - a public cloud storage on AWS.
 
-<p align='center'>
+<p align='left'>
   <img width='500' height='247' src="https://user-images.githubusercontent.com/75905911/119559642-f2a7c480-bd70-11eb-81bd-8575e47d3c99.png">
 </p>
 
-<p align='center'>
+<p align='right'>
   <img width='500' height='247' src="https://user-images.githubusercontent.com/75905911/119559660-f9ced280-bd70-11eb-9c77-85b4c9e519b5.png">
 </p>
 
