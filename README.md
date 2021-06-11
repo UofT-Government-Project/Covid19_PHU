@@ -70,9 +70,27 @@ After the cleaning and preprocessing of the dataset, the [cleaned_dataset](https
 </p>
 <br>
 
+### Database Storage:
+
+A database instance was created on AWS' RDS (relational database) and four buckets, one for each table, were created using S3 - a public cloud storage on AWS.
+
+<p align='center'>
+  <img width='500' height='247' src="https://user-images.githubusercontent.com/75905911/119559642-f2a7c480-bd70-11eb-81bd-8575e47d3c99.png">
+</p>
+
+<p align='center'>
+  <img width='500' height='247' src="https://user-images.githubusercontent.com/75905911/119559660-f9ced280-bd70-11eb-9c77-85b4c9e519b5.png">
+</p>
+
+### Connection String:
+
+To create a connection from the database into PostgreSql, the SQLAlchemy's create engine library was used to load the refined csv file.
+
+<img src="https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/Connection%20String.png?raw=true">
+
 ### PostgreSQL Database:
 
-The cleaned data was saved into AWS RDS using S3 buckets which was then imported into a SQL database, Postgres using pgAdmin.  Using queries, a table named "phu" was created to host the entire dataset.  Further querying the main table, additional tables were created and then saved as csv files in [Datasource](https://github.com/UofT-Government-Project/Covid19_PHU/tree/main/Datasource).  The new files were used by team members for different aspects of the project.<br>
+Once the data was saved on the cloud storage, it was imported into a SQL database, Postgres using pgAdmin.  Using queries, a table named "phu" was created to host the entire dataset.  Further querying the main table, additional tables were created and then saved as csv files in [Datasource](https://github.com/UofT-Government-Project/Covid19_PHU/tree/main/Datasource).  The new files were used by team members for different aspects of the project.<br>
 <br>
 *[schema1.sql](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/SQL_Schemas/schema1.sql) file shows the queries.*
 
@@ -83,19 +101,19 @@ Using the newly saved csv files, four more tables were created and their corresp
 #### Tables from schema2.sql:
 1.  PHU_locations - details containing the name and ID associated for a specific PHU (Public Health Unit) along with the coordinates and physical address for all of 34 units.
 <p align='center'>
-  <img width='500' height='247' src='https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/PHU_locations.png?raw=true'>
+  <img width='700' height='291' src='https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/PHU_locations.png?raw=true'>
 </p>
 2.  PHU - details include the age groups, gender, outcome for each case and the week, month and year for each case associated with each PHU.  An index ID was included to create a primary key to call on during queries.
 <p align='center'>
-  <img width='500' height='247' src="https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/phu.png?raw=true">
+  <img width='700' height='242' src="https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/phu.png?raw=true">
 </p>
 3.  PHU_Gender_final - includes the gender and the count associated with each PHU ID.
 <p align='center'>
-  <img width='300' height='233' src="https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/phu_gender_final.png?raw=true">
+  <img width='400' height='310' src="https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/phu_gender_final.png?raw=true">
 </p>
 4.  PHU_Age_Group_Final - contains the age group per case associated with each PHU ID.
 <p align='center'>
-   <img width='300' height='223' src="https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/phu_age_group_final.png?raw=true">
+   <img width='400' height='297' src="https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/phu_age_group_final.png?raw=true">
 </p>                               
                                
                                 
@@ -104,41 +122,24 @@ Using the newly saved csv files, four more tables were created and their corresp
 Two more tables were created by joining tables using the inner join method:
   1.  phu_by_age_and_outcome <br>
 <p align='center'>
-  <img width='500' height='247' src="https://user-images.githubusercontent.com/75905911/119880776-9670ac00-befa-11eb-8920-9e36496aca8b.png">
+  <img width='700' height='286' src="https://user-images.githubusercontent.com/75905911/119880776-9670ac00-befa-11eb-8920-9e36496aca8b.png">
 </p>
 
 <p align='center'>
-  <img width='500' height='247' src="https://user-images.githubusercontent.com/75905911/119879902-b6ec3680-bef9-11eb-8f79-191951a1fe4e.png">
+  <img width='700' height='286' src="https://user-images.githubusercontent.com/75905911/119879902-b6ec3680-bef9-11eb-8f79-191951a1fe4e.png">
 </p>
 
   2.  phu_by_gender_and_outcome <br>
 
 <p align='center'>  
-  <img width='500' height='247' src="https://user-images.githubusercontent.com/75905911/119880078-e13df400-bef9-11eb-8de1-acae1db62c3e.png">
+  <img width='700' height='418' src="https://user-images.githubusercontent.com/75905911/119880078-e13df400-bef9-11eb-8de1-acae1db62c3e.png">
 </p>
 
 
 <p align='center'>
-  <img width='500' height='247' src="https://user-images.githubusercontent.com/75905911/119879939-c10e3500-bef9-11eb-8175-eafed7f30472.png">
+  <img width='700' height='418' src="https://user-images.githubusercontent.com/75905911/119879939-c10e3500-bef9-11eb-8175-eafed7f30472.png">
 </p>
 
-### Connection String:
-
-To create a connection from the database into PostgreSql, the SQLAlchemy's create engine library was used to load the refined csv file.
-
-<img src="https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Images/Connection%20String.png?raw=true">
-
-### Database Storage:
-
-A database instance was created on AWS' RDS (relational database) and four buckets, one for each table, were created using S3 - a public cloud storage on AWS.
-
-<p align='center'>
-  <img width='500' height='247' src="https://user-images.githubusercontent.com/75905911/119559642-f2a7c480-bd70-11eb-81bd-8575e47d3c99.png">
-</p>
-
-<p alight='center'>
-  <img width='500' height='247' src="https://user-images.githubusercontent.com/75905911/119559660-f9ced280-bd70-11eb-9c77-85b4c9e519b5.png">
-</p>
 
 ## Prediction with Machine Learning
 
@@ -227,13 +228,13 @@ In exploring the data with further analysis on Python, the results can identify 
 <br>
 
 <p align='center'>
-  <img src='https://github.com/UofT-Government-Project/Covid19_PHU/blob/michelle/Visualizations/Covid_19_cases_by_age_group.png?raw=true'>
+  <img width='500' height='300' src='https://github.com/UofT-Government-Project/Covid19_PHU/blob/michelle/Visualizations/Covid_19_cases_by_age_group.png?raw=true'>
 </p>
 
   - Number of cases per gender.  This chart reveals females have been more of the victim for contracting Covid-19, at 54.1% vs. males at 45.1%. <br>
   
 <p align='center'>
-  <img src='https://github.com/UofT-Government-Project/Covid19_PHU/blob/michelle/Visualizations/Covid_19_cases_by_gender.png?raw=true'>
+  <img width='500' height='300' src='https://github.com/UofT-Government-Project/Covid19_PHU/blob/michelle/Visualizations/Covid_19_cases_by_gender.png?raw=true'>
 </p>
 
   - Cases by age and gender.  Below chart segregates the cases by gender and age.  Highest cases are females within the age of 40 and lowest are male in the ages of 90 +. <br>
@@ -265,7 +266,7 @@ The image below shows the total number of cases, number of cases based on age gr
   
 This image shows the number of cases by Public Health Unit ID vs Age group. 
 <p align='center'>
-  <img src='https://user-images.githubusercontent.com/76136277/120877269-9c622f00-c583-11eb-98bd-ede0352f18e3.png'>
+  <img width='700' height='400' src='https://user-images.githubusercontent.com/76136277/120877269-9c622f00-c583-11eb-98bd-ede0352f18e3.png'>
 </p>
 
   3.  **Cases by Public Health Unit**
