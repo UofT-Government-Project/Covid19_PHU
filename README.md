@@ -88,11 +88,11 @@ Using the newly saved csv files, four more tables were created and their corresp
 
 
 <p align='center>
-  <img width='500' height='247' src="https://user-images.githubusercontent.com/75905911/119559849-30a4e880-bd71-11eb-8b03-d13f02aeb44c.png">
+  <img src="https://user-images.githubusercontent.com/75905911/119559849-30a4e880-bd71-11eb-8b03-d13f02aeb44c.png">
 </p>
                                
 <p align='center'>
-   <img width='500' height='247' src="https://user-images.githubusercontent.com/75905911/119559835-2da9f800-bd71-11eb-96ea-424241034d8e.png">
+   <img src="https://user-images.githubusercontent.com/75905911/119559835-2da9f800-bd71-11eb-96ea-424241034d8e.png">
 </p>
                                 
 ### Joins:
