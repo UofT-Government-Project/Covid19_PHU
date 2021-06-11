@@ -63,9 +63,6 @@ After the cleaning and preprocessing of the dataset, the [cleaned_dataset](https
 
 <p align='center'> 
   <img width='500' height='247' src="https://user-images.githubusercontent.com/75905911/119560169-95f8d980-bd71-11eb-9856-01d72383ade1.png">
-</p>
-
-<p align='center'>
   <img width='500' height='247' src="https://user-images.githubusercontent.com/75905911/119560180-98f3ca00-bd71-11eb-9926-755b8e07d208.png">
 </p>
 <br>
@@ -259,7 +256,7 @@ In exploring the data with further analysis on Python, the results can identify 
 
 The image below shows the total number of cases, number of cases based on age group, gender and status.
 <p align='center'>
-  <img src='https://user-images.githubusercontent.com/76136277/120877196-265dc800-c583-11eb-9925-1779e0df8bd2.png'>
+  <img width='800' height='600' src='https://user-images.githubusercontent.com/76136277/120877196-265dc800-c583-11eb-9925-1779e0df8bd2.png'>
 </p>
 
   2.  **Cases by Age Group and Public Health Unit**
@@ -273,21 +270,21 @@ This image shows the number of cases by Public Health Unit ID vs Age group.
 
 The image was created using tableau map. It shows the number of cases by public health unit. The larger the size, the larger the number of cases. The second image also shows gender by age PHU.
 <p align='center'>
-  <img src='https://user-images.githubusercontent.com/76136277/120877233-6a50cd00-c583-11eb-8d64-1f9dd6161459.png'>
+  <img width='800' height='600' src='https://user-images.githubusercontent.com/76136277/120877233-6a50cd00-c583-11eb-8d64-1f9dd6161459.png'>
 </p>
 
   4.  **Overview of Cases by Status**
 
 The image below represents covid status, that is, number of fatal, resolved and not resolved cases by age group, gender and PHU.
 <p align='center'> 
-  <img src='https://user-images.githubusercontent.com/76136277/120877171-f8788380-c582-11eb-8183-29a493b04c37.png'>
+  <img width='800' height='600' src='https://user-images.githubusercontent.com/76136277/120877171-f8788380-c582-11eb-8183-29a493b04c37.png'>
 </p>
 
   5.  **Covid Cases by Year/Month**
 
 In this image, we can see cases by age group and gender from January to Decemeber. The thicker the colour the more the number of cases. Also, the line graph shows yearly cases by gender. We can conclude that there were more cases in year 2020 than in year 2021. Lastly, females have the highest number of covid cases.
 <p align='center'>' 
-  <img src='https://user-images.githubusercontent.com/76136277/120877460-a6386200-c584-11eb-9903-d05a3dce2195.png'>
+  <img width='800' height='600' src='https://user-images.githubusercontent.com/76136277/120877460-a6386200-c584-11eb-9903-d05a3dce2195.png'>
 </p>
 
 [Storyboard Link](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/Ontario_Public_Health_Unit_Covid_Cases_v2020.4.twbx)
@@ -297,14 +294,28 @@ In this image, we can see cases by age group and gender from January to Decemebe
 
 An interactive dashboard has been created providing statistics of age group and gender for each Public Health Unit in Ontario. <br>
 The sample data was extracted using pandas in Python to clean data using similar process as the ETL.  Then the data was grouped by each PHU to tabulate totals.  Thereafter the final dataframe was transformed into a preferred JSON format.  *Step by step process can be seen in [Processing csv_to_json](https://github.com/UofT-Government-Project/Covid19_PHU/blob/main/JS_Dashboard/processing_csv_to_json.ipynb).*  <br>
-Once data was saved as required, the file was called and filtered into a JavaScript file using D3.  With each iteration 3 charts were created using plotly.  Then the data has been displayed in HTML file calling bootstrap 3 to format the positioning of each chart. <br>
+Once data was saved as required, the file was called and filtered into a JavaScript file using D3 library.  With each iteration, 3 charts were created using plotly.  Then the data has been displayed in HTML file calling bootstrap 3 to format the positioning of each chart. <br>
 <br>
+
+<p align='center'>
+  <img width='294' height='607' src='https://user-images.githubusercontent.com/75437852/121713171-8df7a400-caaa-11eb-879f-884c883ce677.PNG'>
+</p>
+
 *The interactive dashboard has been deployed using github pages.  [Statistics of Public Health Units in Ontario - Dashboard](https://uoft-government-project.github.io/Covid19_PHU/)*
 
 
+## Summary
+
+Based on this analysis, each Public Health Unit in Ontario have different age groups and or gender with higher cases. <br>
+<br>
+With this unforeseen pandemic, the Government rolled out the vaccination program as soon as possible, starting from the elderly age group down to the younger population to control the Covid-19 virus from spreading further.  Though this plan has been successful thus far, the rise of cases  took longer to curtail. <br>
+<br>
+Should there be another pandemic/epidemic in the future, we hope this analysis can shed light  and can be imitated on how to target a specific demographic of the population for each region in Ontario.  <br>
+Understanding there may be other logistics involved to distribute the vaccine based on the results here, a similar analysis can possibly highlight the need to vaccinate a specific part of the population first.  Which not only could avoid further spread but also diminish the cases sooner.
+
 ## Google Presentation
 
-Presentation showcasing the project:
+A presentation is availble that provides summarized steps taken for this analysis:
 https://docs.google.com/presentation/d/1R-9hwFz2FQSbQqZFsBUwxTXCbG8xHMHgzqgI43Wb4a4/edit?usp=sharing
 
 
