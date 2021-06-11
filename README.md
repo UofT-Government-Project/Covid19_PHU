@@ -122,7 +122,7 @@ Using the newly saved csv files, four more tables were created and their corresp
 Two more tables were created by joining tables using the inner join method:
   1.  phu_by_age_and_outcome <br>
 <p align='center'>
-  <img width='700' height='286' src="https://user-images.githubusercontent.com/75905911/119880776-9670ac00-befa-11eb-8920-9e36496aca8b.png">
+  <img width='650' height='286' src="https://user-images.githubusercontent.com/75905911/119880776-9670ac00-befa-11eb-8920-9e36496aca8b.png">
 </p>
 
 <p align='center'>
