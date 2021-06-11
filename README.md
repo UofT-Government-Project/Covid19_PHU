@@ -117,6 +117,7 @@ Two more tables were created by joining tables using the inner join method:
   <img width='500' height='247' src="https://user-images.githubusercontent.com/75905911/119880078-e13df400-bef9-11eb-8de1-acae1db62c3e.png">
 </p>
 
+
 <p align='center'>
   <img width='500' height='247' src="https://user-images.githubusercontent.com/75905911/119879939-c10e3500-bef9-11eb-8175-eafed7f30472.png">
 </p>
